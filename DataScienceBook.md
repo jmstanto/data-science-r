@@ -363,27 +363,45 @@ Just one more topic to pack in before ending this chapter: How to access the sto
 [1] 43 42 12  8  5
 
 If you’re alert you might wonder why we went to the trouble of typing out that big long thing with the $ in the middle, when we could have just referred to “myFamilyAges” as we did earlier when we were setting up the data. Well, this is a very important point. When we created the myFamily dataframe, we copied all of the information from the individual vectors that we had before into a brand new storage space. So now that we have created the myFamily dataframe, myFamilyData$myFamilyAges actually refers to a completely separate (but so far identical) vector of values. You can prove this to yourself very easily, and you should, by adding some data to the original vector, myFamilyAges:
+
 > myFamilyAges <- c(myFamilyAges, 11)
 > myFamilyAges
 [1] 43 42 12  8  5 11
 > myFamily$myFamilyAges
 [1] 43 42 12  8  5
+
 Look very closely at the five lines above. In the first line, we use the c() command to add the value 11 to the original list of ages that we had stored in myFamilyAges (perhaps we have adopted an older cat into the family). In the second line we ask R to report what the vector myFamilyAges now contains. Dutifully, on the third line above, R reports that myFamilyAges now contains the original five values and the new value of 11 on the end of the list. When we ask R to report myFamily$myFamilyAges, however, we still have the original list of five values only. This shows that the dataframe and its component columns/vectors is now a completely independent piece of data. We must be very careful, if we established a dataframe that we want to use for subsequent analysis, that we don’t make a mistake and keep using some of the original data from which we assembled the dataframe.
+
 Here’s a puzzle that follows on from this question. We have a nice dataframe with five observations and four variables. This is a rectangular shaped data set, as we discussed at the beginning of the chapter. What if we tried to add on a new piece of data on the end of one of the variables? In other words, what if we tried something like this command:
+
 myFamily$myFamilyAges<-c(myFamily$myFamilyAges, 11)
+
 If this worked, we would have a pretty weird situation: The variable in the dataframe that contained the family members’ ages would all of a sudden have one more observation than the other variables: no more perfect rectangle! Try it out and see what happens. The result helps to illuminate how R approaches situations like this. 
+
 So what new skills and knowledge do we have at this point? Here are a few of the key points from this chapter:
+
 In R, as in other programs, a vector is a list of elements/things that are all of the same kind, or what R refers to as a mode. For example, a vector of mode “numeric” would contain only numbers. 
+
 Statisticians, database experts and others like to work with rectangular datasets where the rows are cases or instances and the columns are variables or attributes. 
+
 In R, one of the typical ways of storing these rectangular structures is in an object known as a dataframe. Technically speaking a dataframe is a list of vectors where each vector has the exact same number of elements as the others (making a nice rectangle). 
+
 In R, the data.frame() function organizes a set of vectors into a dataframe. A dataframe is a conventional, rectangular shaped data object where each column is a vector of uniform mode and having the same number of elements as the other columns in the dataframe. Data are copied from the original source vectors into new storage space. The variables/columns of the dataframe can be accessed using “$” to connect the name of the dataframe to the name of the variable/column.
+
 The str() and summary() functions can be used to reveal the structure and contents of a dataframe (as well as of other data objects stored by R). The str() function shows the structure of a data object, while summary() provides an numerical summaries of numeric variables and overviews of non-numeric variables.
+
 A factor is a labeling system often used to organize groups of cases or observations. In R, as well as in many other software programs, a factor is represented internally with a numeric ID number, but factors also typically have labels like “Male” and “Female” or “Experiment” and “Control.” Factors always have “levels,” and these are the different groups that the factor signifies. For example, if a factor variable called Gender codes all cases as either “Male” or “Female” then that factor has exactly two levels. 
+
 Quartiles are a division of a sorted vector into four evenly sized groups. The first quartile contains the lowest-valued elements, for example the lightest weights, whereas the fourth quartile contains the highest-valued items. Because there are four groups, there are three dividing lines that separate them. The middle dividing line that splits the vector exactly in half is the median. The term “first quartile” often refers to the dividing line to the left of the median that splits up the lower two quarters and the value of the first quartile is the value of the element of the vector that sits right at that dividing line. Third quartile is the same idea, but to the right of the median and splitting up the two higher quarters.
+
 Min and max are often used as abbreviations for minimum and maximum and these are the terms used for the highest and lowest values in a vector. Bonus: The “range” of a set of numbers is the maximum minus the minimum.
+
 The mean is the same thing that most people think of as the average. Bonus: The mean and the median are both measures of what statisticians call “central tendency.”
+
 Chapter Challenge
+
 Create another variable containing information about family members (for example, each family member’s estimated IQ; you can make up the data). Take that new variable and put it in the existing myFamily dataframe. Rerun the summary() function on myFamily to get descriptive information on your new variable.
+
 Sources
 http://en.wikipedia.org/wiki/Central_tendency 
 http://en.wikipedia.org/wiki/Median 
@@ -393,50 +411,81 @@ http://stat.ethz.ch/R-manual/R-devel/library/base/html/data.frame.html
 http://www.burns-stat.com/pages/Tutor/hints_R_begin.html 
 http://www.khanacademy.org/math/statistics/v/mean-median-and-mode 
 
+
 R Functions Used in This Chapter 
+
 c()			Concatenates data elements together
 <-			Assignment arrow
 data.frame()	Makes a dataframe from separate vectors
 str()			Reports the structure of a data object
 summary()	Reports data modes/types and a data overview
+
 The end of the 1800s and the early 1900s were a time of astonishing progress in mathematics and science. Given enough time, paper, and pencils, scientists and mathematicians of that age imagined that just about any problem facing humankind -  including the limitations of people themselves - could be measured, broken down, analyzed, and rebuilt to become more efficient. Four Englishmen who epitomized both this scientific progress and these idealistic beliefs were Francis Galton, Karl Pearson, William Sealy Gosset, and Ronald Fisher. 
+
 First on the scene was Francis Galton, a half-cousin to the more widely known Charles Darwin, but quite the intellectual force himself. Galton was an English gentleman of independent means who studied Latin, Greek, medicine, and mathematics, and who made a name for himself as an African explorer. He is most widely known as a proponent of “eugenics” and is credited with coining the term. Eugenics is the idea that the human race could be improved through selective breeding. Galton studied heredity in peas, rabbits, and people and concluded that certain people should be paid to get married and have children because their offspring would improve the human race. These ideas were later horribly misused in the 20th century, most notably by the Nazis as a justification for killing people because they belonged to supposedly inferior races. Setting eugenics aside, however, Galton made several notable and valuable contributions to mathematics and statistics, in particular illuminating two basic techniques that are widely used today: correlation and regression. 
+
 For all his studying and theorizing, Galton was not an outstanding mathematician, but he had a junior partner, Karl Pearson, who is often credited with founding the field of mathematical statistics. Pearson refined the math behind correlation and regression and did a lot else besides to contribute to our modern abilities to manage numbers. Like Galton, Pearson was a proponent of eugenics, but he also is credited with inspiring some of Einstein’s thoughts about relativity and was an early advocate of women’s rights.  
+
 Next to the statistical party was William Sealy Gosset, a wizard at both math and chemistry. It was probably the latter expertise that led the Guinness Brewery in Dublin Ireland to hire Gosset after college. As a forward looking business, the Guinness brewery was on the lookout for ways of making batches of beer more consistent in quality. Gosset stepped in and developed what we now refer to as small sample statistical techniques - ways of generalizing from the results of a relatively few observations. Of course, brewing a batch of beer is a time consuming and expensive process, so in order to draw conclusions from experimental methods applied to just a few batches, Gosset had to figure out the role of chance in determining how a batch of beer had turned out. Guinness frowned upon academic publications, so Gosset had to publish his results under the modest pseudonym, “Student.” If you ever hear someone discussing the “Student’s t-Test,” that is where the name came from. 
+
 Last but not least among the born-in-the-1800s bunch was Ronald Fisher, another mathematician who also studied the natural sciences, in his case biology and genetics. Unlike Galton, Fisher was not a gentleman of independent means, in fact, during his early married life he and his wife struggled as subsistence farmers. One of Fisher’s professional postings was to an agricultural research farm called Rothhamsted Experimental Station. Here, he had access to data about variations in crop yield that led to his development of an essential statistical technique known as the analysis of variance. Fisher also pioneered the area of experimental design, which includes matters of factors, levels, experimental groups, and control groups that we noted in the previous chapter.
+
 Of course, these four are certainly not the only 19th and 20th century mathematicians to have made substantial contributions to practical statistics, but they are notable with respect to the applications of mathematics and statistics to the other sciences (and “Beer, Farms, and Peas” makes a good chapter title as well).
+
 One of the critical distinctions woven throughout the work of these four is between the “sample” of data that you have available to analyze and the larger “population” of possible cases that may or do exist. When Gosset ran batches of beer at the brewery, he knew that it was impractical to run every possible batch of beer with every possible variation in recipe and preparation. Gosset knew that he had to run a few batches, describe what he had found and then generalize or infer what might happen in future batches. This is a fundamental aspect of working with all types and amounts of data: Whatever data you have, there’s always more out there. There’s data that you might have collected by changing the way things are done or the way things are measured. There’s future data that hasn’t been collected yet and might never be collected. There’s even data that we might have gotten using the exact same strategies we did use, but that would have come out subtly different just due to randomness. Whatever data you have, it is just a snapshot or “sample” of what might be out there. This leads us to the conclusion that we can never, ever 100% trust the data we have. We must always hold back and keep in mind that there is always uncertainty in data. A lot of the power and goodness in statistics comes from the capabilities that people like Fisher developed to help us characterize and quantify that uncertainty and for us to know when to guard against putting too much stock in what a sample of data have to say. So remember that while we can always describe the sample of data we have, the real trick is to infer what the data may mean when generalized to the larger population of data that we don’t have. This is the key distinction between descriptive and inferential statistics. 
+
 We have already encountered several descriptive statistics in previous chapters, but for the sake of practice here they are again, this time with the more detailed definitions:
+
 The mean (technically the arithmetic mean), a measure of central tendency that is calculated by adding together all of the observations and dividing by the number of observations.
+
 The median, another measure of central tendency, but one that cannot be directly calculated. Instead, you make a sorted list of all of the observations in the sample, then go halfway up that list. Whatever the value of the observation is at the halfway point, that is the median.
+
 The range, which is a measure of “dispersion” - how spread out a bunch of numbers in a sample are - calculated by subtracting the lowest value from the highest value.
+
 To this list we should add three more that you will run into in a variety of situations:
+
 The mode, another measure of central tendency. The mode is the value that occurs most often in a sample of data. Like the median, the mode cannot be directly calculated. You just have to count up how many of each number there are and then pick the category that has the most. 
+
 The variance, a measure of dispersion. Like the range, the variance describes how spread out a sample of numbers is. Unlike the range, though, which just uses two numbers to calculate dispersion, the variance is obtained from all of the numbers through a simple calculation that compares each number to the mean. If you remember the ages of the family members from the previous chapter and the mean age of 22, you will be able to make sense out of the following table:
+
 This table shows the calculation of the variance, which begins by obtaining the “deviations” from the mean and then “squares” them (multiply each times itself) to take care of the negative deviations (for example, -14 from the mean for Bro). We add up all of the squared deviations and then divide by the number of observations to get a kind of “average squared deviation.” Note that it was not a mistake to divide by 4 instead of 5 - the reasons for this will become clear later in the book when we examine the concept of degrees of freedom. This result is the variance, a very useful mathematical concept that appears all over the place in statistics. While it is mathematically useful, it is not too nice too look at. For instance, in this example we are looking at the 356.5 squared-years of deviation from the mean. Who measures anything in squared years? Squared feet maybe, but that’s a different discussion. So, to address this weirdness, statisticians have also provided us with:
+
 The standard deviation, another measure of dispersion, and a cousin to the variance. The standard deviation is simply the square root of the variance, which puts us back in regular units like “years.” In the example above, the standard deviation would be about 18.88 years (rounding to two decimal places, which is plenty in this case).
+
 Now let’s have R calculate some statistics for us:
+
 > var(myFamily$myFamilyAges)
 [1] 356.5 
 > sd(myFamily$myFamilyAges)
 [1] 18.88121
+
 Note that these commands carry on using the data used in the previous chapter, including the use of the $ to address variables within a dataframe. If you do not have the data from the previous chapter you can also do this:
+
 > var(c(43,42,12,8,5))
 [1] 356.5
 > sd(c(43,42,12,8,5))
 [1] 18.88121 
+
 This is a pretty boring example, though, and not very useful for the rest of the chapter, so here’s the next step up in looking at data. We will use the Windows or Mac clipboard to cut and paste a larger data set into R. Go to the U.S. Census website where they have stored population data:
+
 http://www.census.gov/popest/data/national/totals/2011/index.html
+
 Assuming you have a spreadsheet program available, click on the XLS link for “Annual Estimates of the Resident Population for the United States.” When the spreadsheet is open, select the population estimates for the fifty states. The first few looked like this in the 2011 data:
+
 .Alabama	4,779,736
 .Alaska	710,231
 .Arizona	6,392,017
 .Arkansas	2,915,918
+
 To make use of the next R command, make sure to choose just the numbers and not the text. Before you copy the numbers, take out the commas by switching the cell type to “General.” This can usually be accomplished under the Format menu, but you might also have a toolbar button to do the job. Copy the numbers to the clipboard with ctrl+C (Windows) or command+C (Mac). On a Windows machine use the following command:
+
 read.DIF("clipboard",transpose=TRUE)
+
 On a Mac, this command does the same thing:
 read.table(pipe("pbpaste"))
+
 It is very annoying that there are two different commands for the two types of computers, but this is an inevitable side effect of the different ways that the designers at Microsoft and Apple set up the clipboard, plus the fact that R was designed to work across many platforms. Anyway, you should have found that the long string of population numbers appeared on the R output. The numbers are not much use to us just streamed to the output, so let’s assign the numbers to a new vector.
+
 Windows, using read.DIF:
 > USstatePops <- + read.DIF("clipboard",transpose=TRUE)
 > USstatePops
@@ -445,6 +494,7 @@ Windows, using read.DIF:
 2    710231
 3   6392017
 ...
+
 Or Mac, using read.table:
 > USstatePops <- read.table(pipe("pbpaste"))
 > USstatePops
@@ -453,9 +503,13 @@ Or Mac, using read.table:
 2    710231
 3   6392017
 ...
+
 Only the first three observations are shown in order to save space on the page. Your output R should show the whole list. Note that the only thing new here over and above what we have done with R in previous chapters is the use of the read.DIF() or read.table() functions to get a bigger set of data that we don’t have to type ourselves. Functions like read.table() are quite important as we move forward with using R because they provide the usual way of getting data stored in external files into R’s storage areas for use in data analysis. If you had trouble getting this to work, you can cut and paste the commands at the end of the chapter under “If All Else Fails” to get the same data going in your copy of R.
+
 Note that we have used the left pointing assignment arrow (“<-”) to take the results of the read.DIF() or read.table() function and place it in a data object. This would be a great moment to practice your skills from the previous chapter by using the str() and summary() functions on our new data object called USstatePops. Did you notice anything interesting from the results of these functions? One thing you might have noticed is that there are 51 observations instead of 50. Can you guess why? If not, go back and look at your original data from the spreadsheet or the U.S. Census site. The other thing you may have noticed is that USstatePops is a dataframe, and not a plain vector of numbers. You can actually see this in the output above: In the second command line where we request that R reveal what is stored in USstatePops, it responds with a column topped by the designation “V1”. Because we did not give R any information about the numbers it read in from the clipboard, it called them “V1”, short for Variable One, by default. So anytime we want to refer to our list of population numbers we actually have to use the name USstatePops$V1. If this sounds unfamiliar, take another look at the previous “Rows and Columns” chapter for more information on addressing the columns in a dataframe. 
+
 Now we’re ready to have some fun with a good sized list of numbers. Here are the basic descriptive statistics on the population of the states:
+
 > mean(USstatePops$V1)
 [1] 6053834
 > median(USstatePops$V1)
@@ -466,28 +520,48 @@ Now we’re ready to have some fun with a good sized list of numbers. Here are t
 [1] 4.656676e+13
 > sd(USstatePops$V1)
 [1] 6823984
+
 Some great summary information there, but wait, a couple things have gone awry:
+
 The mode() function has returned the data type of our vector of numbers instead of the statistical mode. This is weird but true: the basic R package does not have a statistical mode function! This is partly due to the fact that the mode is only useful in a very limited set of situations, but we will find out in later packages how add-on packages can be used to get new functions in R including one that calculates the statistical mode.
+
 The variance is reported as 4.656676e+13. This is the first time that we have seen the use of scientific notation in R. If you haven’t seen this notation before, the way you interpret it is to imagine 4.656676 multiplied by 10,000,000,000,000 (also known as 10 raised to the 13th power). You can see that this is ten trillion, a huge and unwieldy number, and that is why scientific notation is used. If you would prefer not to type all of that into a calculator, another trick to see what number you are dealing with is just to move the decimal point 13 digits to the right.
+
 Other than these two issues, we now know that the average population of a U.S. state is 6,053,834 with a standard deviation of 6,823,984. You may be wondering, though, what does it mean to have a standard deviation of almost seven million?  The mean and standard deviation are OK, and they certainly are mighty precise, but for most of us, it would make much more sense to have a picture that shows the central tendency and the dispersion of a large set of numbers. So here we go. Run this command:
+
 hist(USstatePops$V1)
+
 Here’s the output you should get: 
+
 ￼A histogram is a specialized type of bar graph designed to show “frequencies.” Frequencies means how often a particular value or range of values occurs in a dataset. This histogram shows a very interesting picture. There are nearly 30 states with populations under five million, another 10 states with populations under 10 million, and then a very small number of states with populations greater than 10 million. Having said all that, how do we glean this kind of information from the graph? First, look along the Y-axis (the vertical axis on the left) for an indication of how often the data occur. The tallest bar is just to the right of this and it is nearly up to the 30 mark. To know what this tall bar represents, look along the X-axis (the horizontal axis at the bottom) and see that there is a tick mark for every two bars. We see scientific notation under each tick mark. The first tick mark is 1e+07, which translates to 10,000,000. So each new bar (or an empty space where a bar would go) goes up by five million in population. With these points in mind it should now be easy to see that there are nearly 30 states with populations under five million.
+
 If you think about presidential elections, or the locations of schools and businesses, or how a single U.S. state might compare with other countries in the world, it is interesting to know that there are two really giant states and then lots of much smaller states. Once you have some practice reading histograms, all of the knowledge is available at a glance. 
+
 On the other hand there is something unsatisfying about this diagram. With over forty of the states clustered into the first couple of bars, there might be some more details hiding in there that we would like to know about. This concern translates into the number of bars shown in the histogram. There are eight shown here, so why did R pick eight? 
+
 The answer is that the hist() function has an algorithm or recipe for deciding on the number of categories/bars to use by default. The number of observations and the spread of the data and the amount of empty space there would be are all taken into account. Fortunately it is possible and easy to ask R to use more or fewer categories/bars with the “breaks” parameter, like this:
+
 hist(USstatePops$V1, breaks=20)
+
 ￼This gives us five bars per tick mark or about two million for each bar. So the new histogram above shows very much the same pattern as before: 15 states with populations under two million. The pattern that you see here is referred to as a distribution. This is a distribution that starts off tall on the left and swoops downward quickly as it moves to the right. You might call this a “reverse-J” distribution because it looks a little like the shape a J makes, although flipped around vertically. More technically this could be referred to as a geometric distribution. We don’t have to worry about why it is called that at this stage, but we can speculate on why the distribution looks the way it does. First, you can’t have a state with no people in it, or worse yet negative population. It just doesn’t make any sense. So a state has to have at least a few people in it, and if you look through U.S. history every state began as a colony or a territory that had at least a few people in it. On the other hand, what does it take to grow really large in population? You need a lot of land, first of all, and then a good reason for lots of people to move there or lots of people to be born there. So there are lots of limits to growth: Rhode Island is too small too have a bazillion people in it and Alaska, although it has tons of land, is too cold for lots of people to want to move there. So all states probably started small and grew, but it is really difficult to grow really huge. As a result we have a distribution where most of the cases are clustered near the bottom of the scale and just a few push up higher and higher. But as you go higher, there are fewer and fewer states that can get that big, and by the time you are out at the end, just shy of 40 million people, there’s only one state that has managed to get that big. By the way, do you know or can you guess what that humongous state is? 
+
 There are lots of other distribution shapes. The most common one that almost everyone has heard of is sometimes called the “bell” curve because it is shaped like a bell. The technical name for this is the normal distribution. The term “normal” was first introduced by Carl Friedrich Gauss (1777-1855), who supposedly called it that in a belief that it was the most typical distribution of data that one might find in natural phenomena. The following histogram depicts the typical bell shape of the normal distribution. 
 
 ￼
 If you are curious, you might be wondering how R generated the histogram above, and, if you are alert, you might notice that the histogram that appears above has the word “rnorm” in a couple of places. Here’s another of the cool features in R: it is incredibly easy to generate “fake” data to work with when solving problems or giving demonstrations. The data in this histogram were generated by R’s rnorm() function, which generates a random data set that fits the normal distribution (more closely if you generate a lot of data, less closely if you only have a little. Some further explanation of the rnorm() command will make sense if you remember that the state population data we were using had a mean of 6,053,834 and a standard deviation of 6,823,984. The command used to generate this histogram was:
+
 hist(rnorm(51, 6043834, 6823984))
+
 There are two very important new concepts introduced here. The first is a nested function call: The hist() function that generates the graph “surrounds” the rnorm() function that generates the new fake data. (Pay close attention to the parentheses!) The inside function, rnorm(), is run by R first, with the results of that sent directly and immediately into the hist() function.
+
 The other important thing is the “arguments that” were “passed” to the rnorm() function. We actually already ran into arguments a little while ago with the read.DIF() and read.table() functions but we did not talk about them then. “Argument” is a term used by computer scientists to refer to some extra information that is sent to a function to help it know how to do its job. In this case we passed three arguments to rnorm() that it was expecting in this order: the number of observations to generate in the fake dataset, the mean of the distribution, and the standard deviation of the distribution. The rnorm() function used these three numbers to generate 51 random data points that, roughly speaking, fit the normal distribution. So the data shown in the histogram above are an approximation of what the distribution of state populations might look like if, instead of being reverse-J-shaped (geometric distribution), they were normally distributed.
+
 The normal distribution is used extensively through applied statistics as a tool for making comparisons. For example, look at the rightmost bar in the previous histogram. The label just to the right of that bar is 3e+07, or 30,000,000. We already know from our real state population data that there is only one actual state with a population in excess of 30 million (if you didn’t look it up, it is California). So if all of a sudden, someone mentioned to you that he or she lived in a state, other than California, that had 30 million people, you would automatically think to yourself, “Wow, that’s unusual and I’m not sure I believe it.” And the reason that you found it hard to believe was that you had a distribution to compare it to. Not only did that distribution have a characteristic shape (for example, J-shaped, or bell shaped, or some other shape), it also had a center point, which was the mean, and a “spread,” which in this was case the standard deviation.  Armed with those three pieces of information - the type/shape of distribution, an anchoring point, and a spread (also known as the amount of variability), you have a powerful tool for making comparisons. 
+
 In the next chapter we will conduct some of these comparisons to see what we can infer about the ways things are in general, based on just a subset of available data, or what statisticians call a sample.
+
 Chapter Challenge
+
 In this chapter, we used rnorm() to generate random numbers that closely fit a normal distribution. We also learned that the state population data was a “geometric” distribution. Do some research to find out what R function generates random numbers using the geometric distribution. Then run that function with the correct parameters to generate 51 random numbers (hint: experiment with different probability values). Create a histogram of these random numbers and describe the shape of the distribution.
 
 Sources
@@ -502,7 +576,9 @@ http://www.census.gov/popest/data/national/totals/2011/index.html
 http://www.r-tutor.com/elementary-statistics/numerical-measures/standard-deviation 
 
 
-R Functions Used in This Chapter 
+
+Functions Used in This Chapter 
+
 read.DIF()		Reads data in interchange format
 read.table()	Reads data table from external source
 mean()		Calculate arithmetic mean
@@ -511,21 +587,30 @@ mode()		Tells the data type/mode of a data object 			Note: This is NOT the sta
 var()			Calculate the sample variance
 sd()			Calculate the sample standard deviation
 hist()			Produces a histogram graphic
+
 Test Yourself
 
 If All Else Fails
+
 In case you have difficulty with the read.DIF() or read.table() functions, the code shown below can be copied and pasted (or, in the worst case scenario, typed) into the R console to create the data set used in this chapter.
+
 V1 <- c(4779736,710231,6392017,2915918,37253956, 5029196,3574097,897934,601723,18801310,9687653, 1360301,1567582,12830632,6483802,3046355,2853118,4339367,4533372,1328361,5773552,6547629,9883640, 5303925,2967297,5988927,989415,1826341,2700551, 1316470,8791894,2059179,19378102,9535483,672591, 11536504,3751351,3831074,12702379,1052567, 4625364,814180,6346105,25145561,2763885,625741, 8001024,6724540,1852994,5686986,563626)
 USstatePops <- data.frame(V1)
 
 Imagine a gum ball jar full of gumballs of two different colors, red and blue. The jar was filled from a source that provided 100 red gum balls and 100 blue gum balls, but when these were poured into the jar they got all mixed up. If you drew eight gumballs from the jar at random, what colors would you get? If things worked out perfectly, which they never do, you would get four red and four blue. This is half and half, the same ratio of red and blue that is in the jar as a whole. Of course, it rarely works out this way, does it? Instead of getting four red and four blue you might get three red and five blue or any other mix you can think of. In fact, it would be possible, though perhaps not likely, to get eight red gumballs. The basic situation, though, is that we really don’t know what mix of red and blue we will get with one draw of eight gumballs. That’s uncertainty for you, the forces of randomness affecting our sample of eight gumballs in unpredictable ways.
+
 Here’s an interesting idea, though, that is no help at all in predicting what will happen in any one sample, but is great at showing what will occur in the long run. Pull eight gumballs from the jar, count the number of red ones and then throw them back. We do not have to count the number of blue because 8 - #red = #blue. Mix up the jar again and then draw eight more gumballs and count the number of red. Keeping doing this many times. Here’s an example of what you might get:
+
 Notice that the left column is just counting up the number of sample draws we have done. The right column is the interesting one because it is the count of the number of red gumballs in each particular sample draw. In this example, things are all over the place. In sample draw 4 we only have two red gumballs, but in sample draw 3 we have 6 red gumballs. But the most interesting part of this example is that if you average the number of red gumballs over all of the draws, the average comes out to exactly four red gumballs per draw, which is what we would expect in a jar that is half and half. Now this is a contrived example and we won’t always get such a perfect result so quickly, but if you did four thousand draws instead of four, you would get pretty close to the perfect result.
+
 This process of repeatedly drawing a subset from a “population”  is called “sampling,” and the end result of doing lots of sampling is a sampling distribution. Note that we are using the word population in the previous sentence in its statistical sense to refer to the totality of units from which a sample can be drawn. It is just a coincidence that our dataset contains the number of people in each state and that this value is also referred to as “population.” Next we will get R to help us draw lots of samples from our U.S. state dataset. 
+
 Conveniently, R has a function called sample(), that will draw a random sample from a data set with just a single call. We can try it now with our state data:
+
 > sample(USstatePops$V1,size=16,replace=TRUE)
 [1] 4533372 19378102 897934 1052567 672591 18801310  2967297
 [8]  5029196
+
 As a matter of practice, note that we called the sample() function with three arguments. The first argument was the data source. For the second and third arguments, rather than rely on the order in which we specify the arguments, we have used “named arguments” to make sure that R does what we wanted. The size=16 argument asks R to draw a sample of 16 state data values. The replace=TRUE argument specifies a style of sampling which statisticians use very often to simplify the mathematics of their proofs. For us, sampling with or without replacement does not usually have any practical effects, so we will just go with what the statisticians typically do.
 When we’re working with numbers such as these state values, instead of counting gumball colors, we’re more interested in finding out the average, or what you now know as the mean. So we could also ask R to calculate a mean() of the sample for us:
 > mean(sample(USstatePops$V1,size=16, + replace=TRUE))
