@@ -243,11 +243,11 @@ Using logic and online resources to get help if you need it, learn how to use th
 
 **R Functions Used in This Chapter**
 
-c()  	Concatenates data elements together
-<- 		Assignment arrow
-sum()	Adds data elements
-range()	Max value minus min value
-mean()	The average
+* c()  	Concatenates data elements together
+* <- 		Assignment arrow
+* sum()	Adds data elements
+* range()	Max value minus min value
+* mean()	The average
 
 
 ## Chapter 4
