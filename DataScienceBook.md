@@ -1,19 +1,22 @@
+# An Introduction to Data Science
+by Jeffry Stanton, Syracuse University
 © 2012, Jeffrey Stanton
 
-This book is distributed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 license. You are free to copy, distribute, and transmit this work. You are free to add or adapt the work. You must attribute the work to the author(s) listed above. You may not use this work or derivative works for commercial purposes. If you alter, transform, or build upon this work you may distribute the resulting work only under the same or similar license. 
+*This book is distributed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 license. You are free to copy, distribute, and transmit this work. You are free to add or adapt the work. You must attribute the work to the author(s) listed above. You may not use this work or derivative works for commercial purposes. If you alter, transform, or build upon this work you may distribute the resulting work only under the same or similar license.*
 
 For additional details, please see:
-http://creativecommons.org/licenses/by-nc-sa/3.0/ 
+[http://creativecommons.org/licenses/by-nc-sa/3.0/](http://creativecommons.org/licenses/by-nc-sa/3.0/)
 
 
 
-This book was developed for the Certificate of Data Science program at Syracuse University’s School of Information Studies. If you find errors or omissions, please contact the author, Jeffrey Stanton, at jmstanto@syr.edu. A PDF version of this book and code examples used in the book are available at:
+This book was developed for the Certificate of Data Science program at Syracuse University’s School of Information Studies. If you find errors or omissions, please contact the author, Jeffrey Stanton, at [jmstanto@syr.edu](mailto://jmstanto@syr.ed). A PDF version of this book and code examples used in the book are available at:
 
-http://jsresearch.net/groups/teachdatascience 
-
-
+[http://jsresearch.net/groups/teachdatascience](http://jsresearch.net/groups/teachdatascience)
 
 
+
+## Section 1
+# Data Science: Many Skills
 
 For some, the term “Data Science” evokes images of statisticians in white lab coats staring fixedly at blinking computer screens filled with scrolling numbers. Nothing could be further from the truth. First of all, statisticians do not wear lab coats: this fashion statement is reserved for biologists, doctors, and others who have to keep their clothes clean in environments filled with unusual fluids. Second, much of the data in the world is non-numeric and unstructured. In this context, unstructured means that the data are not arranged in neat rows and columns. Think of a web page full of photographs and short messages among friends: very few numbers to work with there. While it is certainly true that companies, schools, and governments use plenty of numeric information - sales of products, grade point averages, and tax assessments are a few examples - there is lots of other information in the world that mathematicians and statisticians look at and cringe. So, while it is always useful to have great math skills, there is much to be accomplished in the world of data science for those of us who are presently more comfortable working with words, lists, photographs, sounds, and other kinds of information.
 In addition, data science is much more than simply analyzing data. There are many people who enjoy analyzing data and who could happily spend all day looking at histograms and averages, but for those who prefer other activities, data science offers a range of roles and requires a range of skills. Let’s consider this idea by thinking about some of the data involved in buying a box of cereal. 
@@ -30,14 +33,24 @@ The analysis phase is where data scientists are most heavily involved. In this c
 Finally, the data scientist must become involved in the archiving of the data. Preservation of collected data in a form that makes it highly reusable - what you might think of as “data curation” - is a difficult challenge because it is so hard to anticipate all of the future uses of the data. For example, when the developers of Twitter were working on how to store tweets, they probably never anticipated that tweets would be used to pinpoint earthquakes and tsunamis, but they had enough foresight to realize that “geocodes” - data that shows the geographical location from which a tweet was sent - could be a useful element to store with the data.
 
 All in all, our cereal box and grocery store example helps to highlight where data scientists get involved and the skills they need. Here are some of the skills that the example suggested:
-Learning the application domain - The data scientist must quickly learn how the data will be used in a particular context.
-Communicating with data users - A data scientist must possess strong skills for learning the needs and preferences of users. Translating back and forth between the technical terms of computing and statistics and the vocabulary of the application domain is a critical skill.
-Seeing the big picture of a complex system - After developing an understanding of the application domain, the data scientist must imagine how data will move around among all of the relevant systems and people.
-Knowing how data can be represented - Data scientists must have a clear understanding about how data can be stored and linked, as well as about “metadata” (data that describes how other data are arranged).
-Data transformation and analysis - When data become available for the use of decision makers, data scientists must know how to transform, summarize, and make inferences from the data. As noted above, being able to communicate the results of analyses to users is also a critical skill here.
-Visualization and presentation - Although numbers often have the edge in precision and detail, a good data display (e.g., a bar chart) can often be a more effective means of communicating results to data users.
-Attention to quality - No matter how good a set of data may be, there is no such thing as perfect data. Data scientists must know the limitations of the data they work with, know how to quantify its accuracy, and be able to make suggestions for improving the quality of the data in the future.
-Ethical reasoning - If data are important enough to collect, they are often important enough to affect people’s lives. Data scientists must understand important ethical issues such as privacy, and must be able to communicate the limitations of data to try to prevent misuse of data or analytical results.
+
+* Learning the application domain - The data scientist must quickly learn how the data will be used in a particular context.
+
+* Communicating with data users - A data scientist must possess strong skills for learning the needs and preferences of users. 
+
+* Translating back and forth between the technical terms of computing and statistics and the vocabulary of the application domain is a critical skill.
+
+* Seeing the big picture of a complex system - After developing an understanding of the application domain, the data scientist must imagine how data will move around among all of the relevant systems and people.
+
+* Knowing how data can be represented - Data scientists must have a clear understanding about how data can be stored and linked, as well as about “metadata” (data that describes how other data are arranged).
+
+* Data transformation and analysis - When data become available for the use of decision makers, data scientists must know how to transform, summarize, and make inferences from the data. As noted above, being able to communicate the results of analyses to users is also a critical skill here.
+
+* Visualization and presentation - Although numbers often have the edge in precision and detail, a good data display (e.g., a bar chart) can often be a more effective means of communicating results to data users.
+
+* Attention to quality - No matter how good a set of data may be, there is no such thing as perfect data. Data scientists must know the limitations of the data they work with, know how to quantify its accuracy, and be able to make suggestions for improving the quality of the data in the future.
+
+* Ethical reasoning - If data are important enough to collect, they are often important enough to affect people’s lives. Data scientists must understand important ethical issues such as privacy, and must be able to communicate the limitations of data to try to prevent misuse of data or analytical results.
 
 The skills and capabilities noted above are just the tip of the iceberg, of course, but notice what a wide range is represented here. While a keen understanding of numbers and mathematics is important, particularly for data analysis, the data scientist also needs to have excellent communication skills, be a great systems thinker, have a good eye for visual displays, and be highly capable of thinking critically about how data will be used to make decisions and affect people’s lives. Of course there are very few people who are good at all of these things, so some of the people interested in data will specialize in one area, while others will become experts in another area. This highlights the importance of teamwork, as well.
 
@@ -53,16 +66,19 @@ Obviously if you are reading this book you probably have access to an iBook read
 
 One last thing: The book presents topics in an order that should work well for people with little or no experience in computer science or statistics. If you already have knowledge, training, or experience in one or both of these areas, you should feel free to skip over some of the introductory material and move right into the topics and chapters that interest you most. There’s something here for everyone and, after all, you can’t beat the price!
 
-Sources
-http://en.wikipedia.org/wiki/E-Science 
-http://en.wikipedia.org/wiki/E-Science_librarianship 
-http://en.wikipedia.org/wiki/Wikipedia:Size_comparisons 
-http://en.wikipedia.org/wiki/Statistician 
-http://en.wikipedia.org/wiki/Visualization_(computer_graphics) 
-http://www.khanacademy.org/ 
-http://www.r-project.org/
-http://www.readwriteweb.com/hack/2011/09/unlocking-big-data-with-r.php 
-http://rstudio.org/
+**Sources**
+[http://en.wikipedia.org/wiki/E-Science](http://en.wikipedia.org/wiki/E-Science)
+[http://en.wikipedia.org/wiki/E-Science_librarianship](http://en.wikipedia.org/wiki/E-Science_librarianship) 
+[http://en.wikipedia.org/wiki/Wikipedia:Size_comparisons](http://en.wikipedia.org/wiki/Wikipedia:Size_comparisons) 
+[http://en.wikipedia.org/wiki/Statistician](http://en.wikipedia.org/wiki/Statistician)
+[http://en.wikipedia.org/wiki/Visualization_(computer_graphics)](http://en.wikipedia.org/wiki/Visualization_(computer_graphics))
+[http://www.khanacademy.org/](http://www.khanacademy.org/)
+[http://www.r-project.org/](http://www.r-project.org/)
+[http://www.readwriteweb.com/hack/2011/09/unlocking-big-data-with-r.php](http://www.readwriteweb.com/hack/2011/09/unlocking-big-data-with-r.php)
+[http://rstudio.org/](http://rstudio.org/)
+
+## Chapter 1
+# About Data
 
 The inventor of the World Wide Web, Tim Berners-Lee, is often quoted as having said, “Data is not information, information is not knowledge, knowledge is not understanding, understanding is not wisdom.” This quote suggests a kind of pyramid, where data are the raw materials that make up the foundation at the bottom of the pile, and information, knowledge, understanding and wisdom represent higher and higher levels of the pyramid. In one sense, the major goal of a data scientist is to help people to turn data into information and onwards up the pyramid. Before getting started on this goal, though, it is important to have a solid sense of what data actually are. (Notice that this book treats the word “data” as a plural noun - in common usage you may often hear it referred to as singular instead.) If you have studied computer science or mathematics, you may find the discussion in this chapter a bit redundant, so feel free to skip it. Otherwise, read on for an introduction to the most basic ingredient to the data scientist’s efforts: data.
 
@@ -70,19 +86,26 @@ A substantial amount of what we know and say about data in the present day comes
 
 Once we are comfortable with the idea of a “bit” as the most basic unit of information, either “yes” or “no,” we can combine bits together to make more complicated structures. First, let’s switch labels just slightly. Instead of “no” we will start using zero, and instead of “yes” we will start using one. So we now have a single digit, albeit one that has only two possible states: zero or one (we’re temporarily making a rule against allowing any of the bigger digits like three or seven). This is in fact the origin of the word “bit,” which is a squashed down version of the phrase “Binary digIT.” A single binary digit can be 0 or 1, but there is nothing stopping us from using more than one binary digit in our messages. Have a look at the example in the table below:
 
+| MEANING       | 2ND DIGIT   | 1ST DIGIT  |
+| ------------- |-------------| -----------|
+| No 						| 0 						| 0 					 |
+| Maybe 				| 0 						| 1 					 |
+| Probably 			| 1 						| 0 					 |
+| Definitely 		| 1						| 1 					 |
+
 Here we have started to use two binary digits - two bits - to create a “code book” for four different messages that we might want to transmit to our friend about her dinner party. If we were certain that we would not attend, we would send her the message 0 0. If we definitely planned to attend we would send her 1 1. But we have two additional possibilities, “Maybe” which is represented by 0 1, and “Probably” which is represented by 1 0. It is interesting to compare our original yes/no message of one bit with this new four-option message with two bits. In fact, every time you add a new bit you double the number of possible messages you can send. So three bits would give eight options and four bits would give 16 options. How many options would there be for five bits?
 
-When we get up to eight bits - which provides 256 different combinations - we finally have something of a reasonably useful size to work with. Eight bits is commonly referred to as a “byte” - this term probably started out as a play on words with the word bit. (Try looking up the word “nybble” online!) A byte offers enough different combinations to encode all of the letters of the alphabet, including capital and small letters. There is an old rulebook called “ASCII” - the American Standard Code for Information Interchange - which matches up patterns of eight bits with the letters of the alphabet, punctuation, and a few other odds and ends. For example the bit pattern 0100 0001 represents the capital letter A and the next higher pattern, 0100 0010, represents capital B. Try looking up an ASCII table online (for example, http://www.asciitable.com/) and you can find all of the combinations. Note that the codes may not actually be shown in binary because it is so difficult for people to read long strings of ones and zeroes. Instead you may see the equivalent codes shown in hexadecimal (base 16), octal (base 8), or the most familiar form that we all use everyday, base 10. Although you might remember base conversions from high school math class, it would be a good idea to practice this a little bit - particularly the conversions between binary, hexadecimal, and decimal (base 10). You might also enjoy Vi Hart’s “Binary Hand Dance” video at Khan Academy (search for this at http://www.khanacademy.org or follow the link at the end of the chapter). Most of the work we do in this book will be in decimal, but more complex work with data often requires understanding hexadecimal and being able to know how a hexadecimal number, like 0xA3, translates into a bit pattern. Try searching online for “binary conversion tutorial” and you will find lots of useful sites.
+When we get up to eight bits - which provides 256 different combinations - we finally have something of a reasonably useful size to work with. Eight bits is commonly referred to as a “byte” - this term probably started out as a play on words with the word bit. (Try looking up the word “nybble” online!) A byte offers enough different combinations to encode all of the letters of the alphabet, including capital and small letters. There is an old rulebook called “ASCII” - the American Standard Code for Information Interchange - which matches up patterns of eight bits with the letters of the alphabet, punctuation, and a few other odds and ends. For example the bit pattern 0100 0001 represents the capital letter A and the next higher pattern, 0100 0010, represents capital B. Try looking up an ASCII table online (for example, [http://www.asciitable.com/](http://www.asciitable.com/)) and you can find all of the combinations. Note that the codes may not actually be shown in binary because it is so difficult for people to read long strings of ones and zeroes. Instead you may see the equivalent codes shown in hexadecimal (base 16), octal (base 8), or the most familiar form that we all use everyday, base 10. Although you might remember base conversions from high school math class, it would be a good idea to practice this a little bit - particularly the conversions between binary, hexadecimal, and decimal (base 10). You might also enjoy Vi Hart’s “Binary Hand Dance” video at Khan Academy (search for this at [http://www.khanacademy.org](http://www.khanacademy.org) or follow the link at the end of the chapter). Most of the work we do in this book will be in decimal, but more complex work with data often requires understanding hexadecimal and being able to know how a hexadecimal number, like 0xA3, translates into a bit pattern. Try searching online for “binary conversion tutorial” and you will find lots of useful sites.
 
-Combining Bytes into Larger Structures
+**Combining Bytes into Larger Structures**
 
 Now that we have the idea of a byte as a small collection of bits (usually eight) that can be used to store and transmit things like letters and punctuation marks, we can start to build up to bigger and better things. First, it is very easy to see that we can put bytes together into lists in order to make a “string” of letters, what is often referred to as a “character string.” If we have a piece of text, like “this is a piece of text” we can use a collection of bytes to represent it like this: 
 
-0111010001101000011010010111001100100000011010010111001100100000011000010010000001110000011010010110010101100011011001010010000001101111011001100010000001110100011001010111100001110100
+**0111010001101000011010010111001100100000011010010111001100100000011000010010000001110000011010010110010101100011011001010010000001101111011001100010000001110100011001010111100001110100**
 
 Now nobody wants to look at that, let alone encode or decode it by hand, but fortunately, the computers and software we use these days takes care of the conversion and storage automatically. For example, when we tell the open source data language “R” to store “this is a piece of text” for us like this:
 
-myText <- "this is a piece of text"
+`myText <- "this is a piece of text"`
 
 ...we can be certain that inside the computer there is a long list of zeroes and ones that represent the text that we just stored. By the way, in order to be able to get our piece of text back later on, we have made a kind of storage label for it (the word “myText” above). Anytime that we want to remember our piece of text or use it for something else, we can use the label “myText” to open up the chunk of computer memory where we have put that long list of binary digits that represent our text. The left-pointing arrow made up out of the less-than character (“<“) and the dash character (“-”) gives R the command to take what is on the right hand side (the quoted text) and put it into what is on the left hand side (the storage area we have labeled “myData”). Some people call this the assignment arrow and it is used in some computer languages to make it clear to the human who writes or reads it which direction the information is flowing.
 
@@ -92,41 +115,43 @@ Things get slightly more complicated when we want to store a negative number or 
 
 So far we have mainly looked at how to store one thing at a time, like one number or one letter, but when we are solving problems with data we often need to store a group of related things together. The simplest place to start is with a list of things that are all stored in the same way. For example, we could have a list of integers, where each thing in the list is the age of a person in your family. The list might look like this: 43, 42, 12, 8, 5. The first two numbers are the ages of the parents and the last three numbers are the ages of the kids. Naturally, inside the computer each number is stored in binary, but fortunately we don’t have to type them in that way or look at them that way. Because there are no decimal points, these are just plain integers and a 32 bit integer (4 bytes) is more than enough to store each one. This list contains items that are all the same “type” or “mode.” The open source data program “R” refers to a list where all of the items are of the same mode as a “vector.” We can create a vector with R very easily by listing the numbers, separated by commas and inside parentheses:
 
-c(43, 42, 12, 8, 5)
+`c(43, 42, 12, 8, 5)`
 
 The letter “c” in front of the opening parenthesis stands for concatenate, which means to join things together. Slightly obscure, but easy enough to get used to with some practice. We can also put in some of what we learned a couple of days ago to store our vector in a named location (remember that a vector is list of items of the same mode/type):
 
-myFamilyAges <- c(43, 42, 12, 8, 5)
+`myFamilyAges <- c(43, 42, 12, 8, 5)`
 
 We have just created our first “data set.” It is very small, for sure, only five items, but also very useful for illustrating several major concepts about data. Here’s a recap:
 
-In the heart of the computer, all data are represented in binary. One binary digit, or bit, is the smallest chunk of data that we can send from one place to another.
+* In the heart of the computer, all data are represented in binary. One binary digit, or bit, is the smallest chunk of data that we can send from one place to another.
 
-Although all data are at heart binary, computers and software help to represent data in more convenient forms for people to see. Three important representations are: “character” for representing text, “integer” for representing numbers with no digits after the decimal point, and “floating point” for numbers that may have digits after the decimal point. The list of numbers in our tiny data set just above are integers.
+* Although all data are at heart binary, computers and software help to represent data in more convenient forms for people to see. Three important representations are: “character” for representing text, “integer” for representing numbers with no digits after the decimal point, and “floating point” for numbers that may have digits after the decimal point. The list of numbers in our tiny data set just above are integers.
 
-Numbers and text can be collected into lists, which the open source program “R” calls vectors. A vector has a length, which is the number of items in it, and a “mode” which is the type of data stored in the vector. The vector we were just working on has a length of 5 and a mode of integer.
+* Numbers and text can be collected into lists, which the open source program “R” calls vectors. A vector has a length, which is the number of items in it, and a “mode” which is the type of data stored in the vector. The vector we were just working on has a length of 5 and a mode of integer.
 
-In order to be able to remember where we stored a piece of data, most computer programs, including R, give us a way of labeling a chunk of computer memory. We chose to give the 5-item vector up above the name “myFamilyAges.” Some people might refer to this named list as a “variable,” because the value of it varies, depending upon which member of the list you are examining.
+* In order to be able to remember where we stored a piece of data, most computer programs, including R, give us a way of labeling a chunk of computer memory. We chose to give the 5-item vector up above the name “myFamilyAges.” Some people might refer to this named list as a “variable,” because the value of it varies, depending upon which member of the list you are examining.
 
-If we gather together one or more variables into a sensible group, we can refer to them together as a “data set.” Usually, it doesn’t make sense to refer to something with just one variable as a data set, so usually we need at least two variables. Technically, though, even our very simple “myFamilyAges” counts as a data set, albeit a very tiny one.  
+* If we gather together one or more variables into a sensible group, we can refer to them together as a “data set.” Usually, it doesn’t make sense to refer to something with just one variable as a data set, so usually we need at least two variables. Technically, though, even our very simple “myFamilyAges” counts as a data set, albeit a very tiny one.  
 
-In the next chapter we will install and run the open source “R” data program and learn more about how to create data sets, summarize the information in those data sets, and perform some simple calculations and transformations on those data sets.
+* In the next chapter we will install and run the open source “R” data program and learn more about how to create data sets, summarize the information in those data sets, and perform some simple calculations and transformations on those data sets.
 
-Chapter Challenge
+**Chapter Challenge**
 
-Discover the meaning of “Boolean Logic” and the rules for “and”, “or”, “not”, and “exclusive or”. Once you have studied this for a whole, write down on a piece of paper, without looking, all of the binary operations that demonstrate these rules. 
+*Discover the meaning of “Boolean Logic” and the rules for “and”, “or”, “not”, and “exclusive or”. Once you have studied this for a whole, write down on a piece of paper, without looking, all of the binary operations that demonstrate these rules.*
 
-Sources
-http://en.wikipedia.org/wiki/Claude_Shannon
-http://en.wikipedia.org/wiki/Information_theory 
-http://cran.r-project.org/doc/manuals/R-intro.pdf 
-http://www.khanacademy.org/math/vi-hart/v/binary-hand-dance 
-http://www.khanacademy.org/science/computer-science/v/introduction-to-programs-data-types-and-variables 
-http://www.asciitable.com/ 
-
-Test Yourself
+**Sources**
+[http://en.wikipedia.org/wiki/Claude_Shannon](http://en.wikipedia.org/wiki/Claude_Shannon)
+[http://en.wikipedia.org/wiki/Information_theory](http://en.wikipedia.org/wiki/Information_theory)
+[http://cran.r-project.org/doc/manuals/R-intro.pdf](http://cran.r-project.org/doc/manuals/R-intro.pdf)
+[http://www.khanacademy.org/math/vi-hart/v/binary-hand-dance](http://www.khanacademy.org/math/vi-hart/v/binary-hand-dance)
+[http://www.khanacademy.org/science/computer-science/v/introduction-to-programs-data-types-and-variables](http://www.khanacademy.org/science/computer-science/v/introduction-to-programs-data-types-and-variables)
+[http://www.asciitable.com/](http://www.asciitable.com/) 
 
 
+**Test Yourself**
+
+## Chapter 2
+# Identifying Data Problems
 
 Apple farmers live in constant fear, first for their blossoms and later for their fruit. A late spring frost can kill the blossoms. Hail or extreme wind in the summer can damage the fruit. More generally, farming is an activity that is first and foremost in the physical world, with complex natural processes and forces, like weather, that are beyond the control of humankind. 
 
@@ -150,73 +175,83 @@ A third strategy for identifying data problems is to find out about risk and unc
 
 In the case of the farmer, much of the risk comes from the weather, and the uncertainty revolves around which countermeasures will be cost effective under prevailing conditions. Consuming lots of expensive oil in smudgepots on a night that turns out to be quite warm is a waste of resources that could make the difference between a profitable or an unprofitable year. So more precise and timely information about local weather conditions might be a key focus area for problem solving with data. What if a live stream of national weather service doppler radar could appear on the farmer’s smart phone? Let’s build an app for that...
 
+## Chapter 3
+# Getting Started with R
+
 If you are new to computers, programming, and/or data science welcome to an exciting chapter that will open the door to the most powerful free data analytics tool ever created anywhere in the universe, no joke. On the other hand, if you are experienced with spreadsheets, statistical analysis, or accounting software you are probably thinking that this book has now gone off the deep end, never to return to sanity and all that is good and right in user interface design. Both perspectives are reasonable. The “R” open source data analysis program is immensely powerful, flexible, and especially “extensible” (meaning that people can create new capabilities for it quite easily). At the same time, R is “command line” oriented, meaning that most of the work that one needs to perform is done through carefully crafted text instructions, many of which have tricky syntax (the punctuation and related rules for making a command that works). In addition, R is not especially good at giving feedback or error messages that help the user to repair mistakes or figure out what is wrong when results look funny. 
 
 But there is a method to the madness here. One of the virtues of R as a teaching tool is that it hides very little. The successful user must fully understand what the “data situation” is or else the R commands will not work. With a spreadsheet, it is easy to type in a lot of numbers and a formula like =FORECAST() and a result pops into a cell like magic, whether it makes any sense or not. With R you have to know your data, know what you can do it, know how it has to be transformed, and know how to check for problems. Because R is a programming language, it also forces users to think about problems in terms of data objects, methods that can be applied to those objects, and procedures for applying those methods. These are important metaphors used in modern programming languages, and no data scientist can succeed without having at least a rudimentary understanding of how software is programmed, tested, and integrated into working systems. The extensibility of R means that new modules are being added all the time by volunteers: R was among the first analysis program to integrate capabilities for drawing data directly from the Twitter(r) social media platform. So you can be sure that whatever the next big development is in the world of data, that someone in the R community will start to develop a new “package” for R that will make use of it. Finally, the lessons one learns in working with R are almost universally applicable to other programs and environments. If one has mastered R, it is a relatively small step to get the hang of the SAS(r) statistical programming language and an even smaller step to being able to follow SPSS(r) syntax. (SAS and SPSS are two of the most widely used commercial statistical analysis programs). So with no need for any licensing fees paid by school, student, or teacher it is possible to learn the most powerful data analysis system in the universe and take those lessons with you no matter where you go. It will take a bit patience though, so please hang in there!
 
-Let’s get started. Obviously you will need a computer. If you are working on a tablet device or smartphone, you may want to skip forward to the chapter on R-Studio, because regular old R has not yet been reconfigured to work on tablet devices (but there is a workaround for this that uses R-studio).  There are a few experiments with web-based interfaces to R, like this one - http://dssm.unipa.it/R-php/R-php-1/R/ - but they are still in a very early stage. If your computer has the Windows(r), Mac-OS-X(r) or a Linux operating system, there is a version of R waiting for you at http://cran.r-project.org/. Download and install your own copy. If you sometimes have difficulties with installing new software and you need some help, there is a wonderful little book by Thomas P. Hogan called, Bare Bones R: A Brief Introductory Guide that you might want to buy or borrow from your library. There are lots of sites online that also give help with installing R, although many of them are not oriented towards the inexperienced user. I searched online using the term  “help installing R” and I got a few good hits. One site that was quite informative for installing R on Windows was at “readthedocs.org,” and you can try to access it at this TinyUrl: http://tinyurl.com/872ngtt.   For Mac users there is a video by Jeremy Taylor at Vimeo.com, http://vimeo.com/36697971, that outlines both the initial installation on a Mac and a number of other optional steps for getting started. YouTube also had four videos that provide brief tutorials for installing R. Try search for “install R” in the YouTube search box. The rest of this chapter assumes that you have installed R and can run it on your computer as shown in the screenshot on this page. (Note that this screenshot is from the Mac version of R: if you are running Windows or Linux your R screen may appear slightly different from this.) Just for fun, one of the first things you can do when you have R running is to click on the color wheel and customize the appearance of R. This screen shot uses Syracuse orange as a background color. The screenshot also shows a simple command to type that shows the most basic method of interaction with R. Notice near the bottom of the screenshot a greater than (“>”) symbol. This is the command prompt: When R is running and it is the active application on your desktop, if you type a command it appears after the “>” symbol. If you press the “enter” or “return” key, the command is sent to R for processing. When the processing is done, a result may appear just under the “>.” When R is done processing, another command prompt (“>”) appears and R is ready for your next command. In the screen shot, the user has typed “1+1” and pressed the enter key. The formula 1+1 is used by elementary school students everywhere to insult each other’s math skills, but R dutifully reports the result as 2. If you are a careful observer, you will notice that just before the 2 there is a “1” in brackets, like this: [1]. That [1] is a line number that helps to keep track of the results that R displays. Pretty pointless when only showing one line of results, but R likes to be consistent, so we will see quite a lot of those numbers in brackets as we dig deeper.
+Let’s get started. Obviously you will need a computer. If you are working on a tablet device or smartphone, you may want to skip forward to the chapter on R-Studio, because regular old R has not yet been reconfigured to work on tablet devices (but there is a workaround for this that uses R-studio).  There are a few experiments with web-based interfaces to R, like this one - [http://dssm.unipa.it/R-php/R-php-1/R/](http://dssm.unipa.it/R-php/R-php-1/R/) - but they are still in a very early stage. If your computer has the Windows(r), Mac-OS-X(r) or a Linux operating system, there is a version of R waiting for you at [http://cran.r-project.org/](http://cran.r-project.org/). Download and install your own copy. If you sometimes have difficulties with installing new software and you need some help, there is a wonderful little book by Thomas P. Hogan called, Bare Bones R: A Brief Introductory Guide that you might want to buy or borrow from your library. There are lots of sites online that also give help with installing R, although many of them are not oriented towards the inexperienced user. I searched online using the term  “help installing R” and I got a few good hits. One site that was quite informative for installing R on Windows was at “readthedocs.org,” and you can try to access it at this TinyUrl: [http://tinyurl.com/872ngtt](http://tinyurl.com/872ngtt).   For Mac users there is a video by Jeremy Taylor at Vimeo.com, [http://vimeo.com/36697971](http://vimeo.com/36697971), that outlines both the initial installation on a Mac and a number of other optional steps for getting started. YouTube also had four videos that provide brief tutorials for installing R. Try search for “install R” in the YouTube search box. The rest of this chapter assumes that you have installed R and can run it on your computer as shown in the screenshot on this page. (Note that this screenshot is from the Mac version of R: if you are running Windows or Linux your R screen may appear slightly different from this.) Just for fun, one of the first things you can do when you have R running is to click on the color wheel and customize the appearance of R. This screen shot uses Syracuse orange as a background color. The screenshot also shows a simple command to type that shows the most basic method of interaction with R. Notice near the bottom of the screenshot a greater than (“>”) symbol. This is the command prompt: When R is running and it is the active application on your desktop, if you type a command it appears after the “>” symbol. If you press the “enter” or “return” key, the command is sent to R for processing. When the processing is done, a result may appear just under the “>.” When R is done processing, another command prompt (“>”) appears and R is ready for your next command. In the screen shot, the user has typed “1+1” and pressed the enter key. The formula 1+1 is used by elementary school students everywhere to insult each other’s math skills, but R dutifully reports the result as 2. If you are a careful observer, you will notice that just before the 2 there is a “1” in brackets, like this: [1]. That [1] is a line number that helps to keep track of the results that R displays. Pretty pointless when only showing one line of results, but R likes to be consistent, so we will see quite a lot of those numbers in brackets as we dig deeper.
 
 Remember the list of ages of family members from the last chapter? No? Well, here it is again: 43, 42, 12, 8, 5, for dad, mom, sis, bro, and the dog, respectively. The previous chapter mentioned that this was a list of items, all of the same mode, namely “integer.” Remember that you can tell that they are OK to be integers because there are no decimal points and therefore nothing after the decimal point. We can create a vector of integers in r using the “c()” command. Take a look at the next screenshot:
 
 This is just about the last time that the whole screenshot from the R console will appear in the book. From here on out we will just look at commands and output so we don’t waste so much space on the page. The first command line in the screen shot is exactly what appeared in the previous chapter:
 
-c(43, 42, 12, 8, 5)
+`c(43, 42, 12, 8, 5)`
 
 You may notice that on the following line, R dutifully reports the vector that you just typed. After the line number “[1]”, we see the list 43, 42, 12, 8, and 5. R “echoes” this list back to us, because we didn’t ask it to store the vector anywhere. In contrast, the next command line (also the same as in the previous chapter), says: 
 
-myFamilyAges <- c(43, 42, 12, 8, 5)
+`myFamilyAges <- c(43, 42, 12, 8, 5)`
 
 We have typed in the same list of numbers, but this time we have assigned it, using the left pointing arrow, into a storage area that we have named “myFamilyAges.” This time, R responds just with an empty command prompt. That’s why the third command line requests a report of what myFamilyAges contains (Look after the yellow “>”. The text in blue is what you should type.) This is a simple but very important tool. Any time you want to know what is in a data object in R, just type the name of the object and R will report it back to you. In the next command we begin to see the power of R:
 
-sum(myFamilyAges)
+`sum(myFamilyAges)`
 
 This command asks R to add together all of the numbers in myFamilyAges, which turns out to be 110 (you can check it yourself with a calculator if you want). This is perhaps a bit of a weird thing to do with the ages of family members, but it shows how with a very short and simple command you can unleash quite a bit of processing on your data. In the next line we ask for the “mean” (what non-data people call the average) of all of the ages and this turns out to be 22 years. The command right afterwards, called “range,” shows the lowest and highest ages in the list. Finally, just for fun, we tried to issue the command “fish(myFamilyAges).” Pretty much as you might expect, R does not contain a “fish()” function and so we received an error message to that effect. This shows another important principle for working with R: You can freely try things out at anytime without fear of breaking anything. If R can’t understand what you want to accomplish, or you haven’t quite figured out how to do something, R will calmly respond with an error message and will not make any other changes until you give it a new command. The error messages from R are not always super helpful, but with some strategies that the book will discuss in future chapters you can break down the problem and figure out how to get R to do what you want. 
 
-Let’s take stock for a moment. First, you should definitely try all of the commands noted above on your own computer. You can read about the commands in this book all you want, but you will learn a lot more if you actually try things out. Second, if you try a command that is shown in these pages and it does not work for some reason, you should try to figure out why. Begin by checking your spelling and punctuation, because R is very persnickety about how commands are typed. Remember that capitalization matters in R: myFamilyAges is not the same as myfamilyages. If you verify that you have typed a command just as you see in the book and it still does not work, try to go online and look for some help. There’s lots of help at http://stackoverflow.com, at https://stat.ethz.ch, and also at  http://www.statmethods.net/. If you can figure out what went wrong on your own you will probably learn something very valuable about working with R. Third, you should take a moment to experiment a bit with each new set of commands that you learn. For example, just using the commands shown in the last screen shot you could do this totally new thing:
+Let’s take stock for a moment. First, you should definitely try all of the commands noted above on your own computer. You can read about the commands in this book all you want, but you will learn a lot more if you actually try things out. Second, if you try a command that is shown in these pages and it does not work for some reason, you should try to figure out why. Begin by checking your spelling and punctuation, because R is very persnickety about how commands are typed. Remember that capitalization matters in R: myFamilyAges is not the same as myfamilyages. If you verify that you have typed a command just as you see in the book and it still does not work, try to go online and look for some help. There’s lots of help at [http://stackoverflow.com/](http://stackoverflow.com/), at [https://stat.ethz.ch/](https://stat.ethz.ch/), and also at [http://www.statmethods.net/](http://www.statmethods.net/). If you can figure out what went wrong on your own you will probably learn something very valuable about working with R. Third, you should take a moment to experiment a bit with each new set of commands that you learn. For example, just using the commands shown in the last screen shot you could do this totally new thing:
 
-myRange <- range(myFamilyAges)
+`myRange <- range(myFamilyAges)`
 
 What would happen if you did that command, and then typed “myRange” (without the double quotes) on the next command line to report back what is stored there ? What would you see? Then think about how that worked and try to imagine some other experiments that you could try. The more you experiment on your own, the more you will learn. Some of the best stuff ever invented for computers was the result of just experimenting to see what was possible. At this point, with just the few commands that you have already tried, you already know the following things about R (and about data):
 
-How to install R on your computer and run it.
+* How to install R on your computer and run it.
 
-How to type commands on the R console.
+* How to type commands on the R console.
 
-The use of the “c()” function. Remember that “c” stands for concatenate, which just means to join things together. You can put a list of items inside the parentheses, separated by commas.
+* The use of the “c()” function. Remember that “c” stands for concatenate, which just means to join things together. You can put a list of items inside the parentheses, separated by commas.
 
-That a vector is pretty much the most basic form of data storage in R, and that it consists of a list of items of the same mode.
+* That a vector is pretty much the most basic form of data storage in R, and that it consists of a list of items of the same mode.
 
-That a vector can be stored in a named location using the assignment arrow (a left pointing arrow made of a dash and a less than symbol, like this: “<-”).
+* That a vector can be stored in a named location using the assignment arrow (a left pointing arrow made of a dash and a less than symbol, like this: “<-”).
 
-That you can get a report of the data object that is in any named location just by typing that name at the command line.
+* That you can get a report of the data object that is in any named location just by typing that name at the command line.
 
-That you can “run” a function, such as mean(), on a vector of numbers to transform them into something else. (The mean() function calculates the average, which is one of the most basic numeric summaries there is.)
+* That you can “run” a function, such as mean(), on a vector of numbers to transform them into something else. (The mean() function calculates the average, which is one of the most basic numeric summaries there is.)
 
-That sum(), mean(), and range() are all legal functions in R whereas fish() is not.
+* That sum(), mean(), and range() are all legal functions in R whereas fish() is not.
 
 In the next chapter we will move forward a step or two by starting to work with text and by combining our list of family ages with the names of the family members and some other information about them.
 
-Chapter Challenge
+**Chapter Challenge**
 
 Using logic and online resources to get help if you need it, learn how to use the c() function to add another family member’s age on the end of the myFamilyAges vector.
 
-Sources
-http://a-little-book-of-r-for-biomedical-statistics.readthedocs.org/en/latest/src/installr.html 
-http://cran.r-project.org/
-http://dssm.unipa.it/R-php/R-php-1/R/ (UNIPA experimental web interface to R)
-http://en.wikibooks.org/wiki/R_Programming 
-https://plus.google.com/u/0/104922476697914343874/posts (Jeremy Taylor’s blog: Stats Make Me Cry)
-http://stackoverflow.com
-https://stat.ethz.ch 
-http://www.statmethods.net/Test Yourself
+**Sources**
+[http://a-little-book-of-r-for-biomedical-statistics.readthedocs.org/en/latest/src/installr.html](http://a-little-book-of-r-for-biomedical-statistics.readthedocs.org/en/latest/src/installr.html)
+[http://cran.r-project.org/](http://cran.r-project.org/)
+[http://dssm.unipa.it/R-php/R-php-1/R/ (UNIPA experimental web interface to R)](http://dssm.unipa.it/R-php/R-php-1/R/)
+[http://en.wikibooks.org/wiki/R_Programming](http://en.wikibooks.org/wiki/R_Programming) 
+[https://plus.google.com/u/0/104922476697914343874/posts (Jeremy Taylor’s blog: Stats Make Me Cry)](https://plus.google.com/u/0/104922476697914343874/posts)
+[http://stackoverflow.com](http://stackoverflow.com)
+[https://stat.ethz.ch](https://stat.ethz.ch)
+[http://www.statmethods.net/](http://www.statmethods.net/)
+
+**Test Yourself**
  
-R Functions Used in This Chapter 
+
+**R Functions Used in This Chapter**
 
 c()  	Concatenates data elements together
 <- 		Assignment arrow
 sum()	Adds data elements
 range()	Max value minus min value
 mean()	The average
+
+
+## Chapter 4
+# Follow the Data
 
 Hate to nag, but have you had a checkup lately? If you have been to the doctor for any reason you may recall that the doctor’s office is awash with data. First off, the doctor has loads of digital sensors, everything from blood pressure monitors to ultrasound machines, and all of these produce mountains of data. Perhaps of greater concern in this era of debate about health insurance, the doctors office is one of the big jumping off points for financial and insurance data. One of the notable “features” of the U.S. healthcare system is our most common method of healthcare delivery: paying by the procedure. When you experience a “procedure” at the doctor’s office, whether it is a consultation, an examination, a test, or something else, this initiates a chain of data events with far reaching consequences.
 
@@ -583,7 +618,8 @@ read.DIF()		Reads data in interchange format
 read.table()	Reads data table from external source
 mean()		Calculate arithmetic mean
 median()		Locate the median
-mode()		Tells the data type/mode of a data object 			Note: This is NOT the statistical mode
+mode()		Tells the data type/mode of a data object
+			Note: This is NOT the statistical mode
 var()			Calculate the sample variance
 sd()			Calculate the sample standard deviation
 hist()			Produces a histogram graphic
@@ -594,7 +630,15 @@ If All Else Fails
 
 In case you have difficulty with the read.DIF() or read.table() functions, the code shown below can be copied and pasted (or, in the worst case scenario, typed) into the R console to create the data set used in this chapter.
 
-V1 <- c(4779736,710231,6392017,2915918,37253956, 5029196,3574097,897934,601723,18801310,9687653, 1360301,1567582,12830632,6483802,3046355,2853118,4339367,4533372,1328361,5773552,6547629,9883640, 5303925,2967297,5988927,989415,1826341,2700551, 1316470,8791894,2059179,19378102,9535483,672591, 11536504,3751351,3831074,12702379,1052567, 4625364,814180,6346105,25145561,2763885,625741, 8001024,6724540,1852994,5686986,563626)
+
+V1 <- c(4779736,710231,6392017,2915918,37253956,
+5029196,3574097,897934,601723,18801310,9687653,
+1360301,1567582,12830632,6483802,3046355,2853118,4339367,4533372,1328361,5773552,6547629,9883640,
+5303925,2967297,5988927,989415,1826341,2700551,
+1316470,8791894,2059179,19378102,9535483,672591,
+11536504,3751351,3831074,12702379,1052567,
+4625364,814180,6346105,25145561,2763885,625741,
+8001024,6724540,1852994,5686986,563626)
 USstatePops <- data.frame(V1)
 
 Imagine a gum ball jar full of gumballs of two different colors, red and blue. The jar was filled from a source that provided 100 red gum balls and 100 blue gum balls, but when these were poured into the jar they got all mixed up. If you drew eight gumballs from the jar at random, what colors would you get? If things worked out perfectly, which they never do, you would get four red and four blue. This is half and half, the same ratio of red and blue that is in the jar as a whole. Of course, it rarely works out this way, does it? Instead of getting four red and four blue you might get three red and five blue or any other mix you can think of. In fact, it would be possible, though perhaps not likely, to get eight red gumballs. The basic situation, though, is that we really don’t know what mix of red and blue we will get with one draw of eight gumballs. That’s uncertainty for you, the forces of randomness affecting our sample of eight gumballs in unpredictable ways.
@@ -615,7 +659,8 @@ As a matter of practice, note that we called the sample() function with three ar
 
 When we’re working with numbers such as these state values, instead of counting gumball colors, we’re more interested in finding out the average, or what you now know as the mean. So we could also ask R to calculate a mean() of the sample for us:
 
-> mean(sample(USstatePops$V1,size=16, + replace=TRUE))
+> mean(sample(USstatePops$V1,size=16, +
+replace=TRUE))
 [1] 8198359
 
 There’s the nested function call again. The output no longer shows the eight values that R sampled from the list of 51. Instead it used those eight values to calculate the mean and display that for us. If you have a good memory, or merely took the time to look in the last chapter, you will remember that the actual mean of our 51 observations is 6,053,834. So the mean that we got from this one sample of eight states is really not even close to the true mean value of our 51 observations. Are we worried? Definitely not! We know that when we draw a sample, whether it is gumballs or states, we will never hit the true population mean right on the head. We’re interested not in any one sample, but in what happens over the long haul. So now we’ve got to get R to repeat this process for us, not once, not four times, but four hundred times or four thousand times. Like most programming languages, R has a variety of ways of repeating an activity. One of the easiest ones to use is the replicate() function. To start, let’s just try four replications:
@@ -625,12 +670,16 @@ There’s the nested function call again. The output no longer shows the eight v
 
 Couldn’t be any easier. We took the exact same command as before, which was a nested function to calculate the mean() of a random sample of eight states (shown above in bold). This time, we put that command inside the replicate() function so we could run it over and over again. The simplify=TRUE argument asks R to return the results as a simple vector of means, perfect for what we are trying to do. We only ran it four times, so that we would not have a big screen full of numbers. From here, though, it is easy to ramp up to repeating the process four hundred times. You can try that and see the output, but for here in the book we will encapsulate the whole replicate function inside another mean(), so that we can get the average of all 400 of the sample means. Here we go:
 
-> mean(replicate(400, mean( +  sample(USstatePops$V1,size=16,replace=TRUE)),+ simplify=TRUE))
+> mean(replicate(400, mean( + 
+sample(USstatePops$V1,size=16,replace=TRUE)),+
+simplify=TRUE))
 [1] 5958336
 
 In the command above, the outermost mean() command is bolded to show what is different from the previous command. So, put into words, this deeply nested command accomplishes the following: a)  Draw 400 samples of size n=8 from our full data set of 51 states; b) Calculate the mean from each sample and keep it in a list; c) When finished with the list of 400 of these means, calculate the mean of that list of means. You can see that the mean of four hundred sample means is 5,958,336. Now that is still not the exact value of the whole data set, but it is getting close. We’re off by about 95,000, which is roughly an error of about 1.6% (more precisely, 95,498/6,053,834 = 1.58%. You may have also noticed that it took a little while to run that command, even if you have a fast computer. There’s a lot of work going on there! Let’s push it a bit further and see if we can get closer to the true mean for all of our data:
 
-> mean(replicate(4000, mean( + sample(USstatePops$V1,size=16,replace=TRUE)),+ simplify=TRUE))
+> mean(replicate(4000, mean( +
+sample(USstatePops$V1,size=16,replace=TRUE)),+
+simplify=TRUE))
 [1] 6000972
 
 Now we are even closer! We are now less than 1% away from the true population mean value. Note that the results you get may be a bit different, because when you run the commands, each of the 400 or 4000 samples that is drawn will be slightly different than the ones that were drawn for the commands above. What will not be much different is the overall level of accuracy. 
@@ -641,25 +690,33 @@ The histogram displays the complete list of 4000 means as frequencies. Take a cl
 
 ￼By the way, were you able to figure out the command to generate this histogram on your own? All you had to do was substitute hist() for the outermost mean() in the previous command. In case you struggled, here it is:
 
-hist(replicate(4000, mean( + sample(USstatePops$V1,size=16,replace=TRUE)), + simplify=TRUE))
+hist(replicate(4000, mean( +
+sample(USstatePops$V1,size=16,replace=TRUE)), +
+simplify=TRUE))
 
-This is a great moment to take a deep breath. We’ve just covered a couple hundred years of statistical thinking in just a few pages. In fact, there are two big ideas, “the law of large numbers” and  the central limit theorem” that we have just partially demonstrated. These two ideas literally took mathematicians like Gerolamo Cardano (1501-1576) and Jacob Bernoulli (1654-1705) several centuries to figure out. If you look these ideas up, you may find a lot of bewildering mathematical details, but for our purposes, there are two really important take-away messages. First, if you run a statistical process a large number of times, it will converge on a stable result. For us, we knew what the average population was of the 50 states plus the District of Columbia. These 51 observations were our population, and we wanted to know how many smaller subsets, or samples, of size n=16 we would have to draw before we could get a good approximation of that true value. We learned that drawing one sample provided a poor result. Drawing 400 samples gave us a mean that was off by 1.5%. Drawing 4000 samples gave us a mean that was off by less than 1%. If we had kept going to 40,000 or 400,000 repetitions of our sampling process, we would have come extremely close to the actual average of 6,053,384. 
+This is a great moment to take a deep breath. We’ve just covered a couple hundred years of statistical thinking in just a few pages. In fact, there are two big ideas, “the law of large numbers” and 
+the central limit theorem” that we have just partially demonstrated. These two ideas literally took mathematicians like Gerolamo Cardano (1501-1576) and Jacob Bernoulli (1654-1705) several centuries to figure out. If you look these ideas up, you may find a lot of bewildering mathematical details, but for our purposes, there are two really important take-away messages. First, if you run a statistical process a large number of times, it will converge on a stable result. For us, we knew what the average population was of the 50 states plus the District of Columbia. These 51 observations were our population, and we wanted to know how many smaller subsets, or samples, of size n=16 we would have to draw before we could get a good approximation of that true value. We learned that drawing one sample provided a poor result. Drawing 400 samples gave us a mean that was off by 1.5%. Drawing 4000 samples gave us a mean that was off by less than 1%. If we had kept going to 40,000 or 400,000 repetitions of our sampling process, we would have come extremely close to the actual average of 6,053,384. 
 
 Second, when we are looking at sample means, and we take the law of large numbers into account, we find that the distribution of sampling means starts to create a bell-shaped or normal distribution, and the center of that distribution, the mean of all of those sample means gets really close to the actual population mean. It gets closer faster for larger samples, and in contrast, for smaller samples you have to draw lots and lots of them to get really close. Just for fun, lets illustrate this with a sample size that is larger than 16. Here’s a run that only repeats 100 times, but each time draws a sample of n=51 (equal in size to the population):
 
-> mean(replicate(100, mean( +  sample(USstatePops$V1,size=51,replace=TRUE)),+ simplify=TRUE))
+> mean(replicate(100, mean( + 
+sample(USstatePops$V1,size=51,replace=TRUE)),+
+simplify=TRUE))
 [1] 6114231
 
 Now, we’re only off from the true value of the population mean by about one tenth of one percent. You might be scratching your head now, saying, “Wait a minute, isn’t a sample of 51 the same thing as the whole list of 51 observations?” This is confusing, but it goes back to the question of sampling with replacement that we examined a couple of pages ago (and that appears in the command above as replace=TRUE). Sampling with replacement means that as you draw out one value to include in your random sample, you immediately chuck it back into the list so that, potentially, it could get drawn again either immediately or later. As mentioned before, this practice simplifies the underlying proofs, and it does not cause any practical problems, other than head scratching. In fact, we could go even higher in our sample size with no trouble:
 
-> mean(replicate(100, mean( + sample(USstatePops$V1,size=120,replace=TRUE)), + simplify=TRUE))
+> mean(replicate(100, mean( +
+sample(USstatePops$V1,size=120,replace=TRUE)), +
+simplify=TRUE))
 [1] 6054718
 
 That command runs 100 replications using samples of size n=120. Look how close the mean of the sampling distribution is to the population mean now! Remember that this result will change a little bit every time you run the procedure, because different random samples are being drawn for each run. But the rule of thumb is that the bigger your sample size, what statisticians call n, the closer your estimate will be to the true value. Likewise, the more trials you run, the closer your population estimate will be. 
 
 So, if you’ve had a chance to catch your breath, let’s move on to making use of the sampling distribution. First, let’s save one distribution of sample means so that we have a fixed set of numbers to work with:
 
-SampleMeans <- replicate(10000, + mean(sample(USstatePops$V1,size=120,+ replace=TRUE)),simplify=TRUE)
+SampleMeans <- replicate(10000, + mean(sample(USstatePops$V1,size=120,+
+replace=TRUE)),simplify=TRUE)
 
 The bolded part is new. We’re saving a distribution of sample means to a new vector called “SampleMeans”. We should have 10,000 of them:
 
@@ -700,11 +757,16 @@ So this result shows that, if we drew a new sample, there is only a 5% chance th
 
 Now let’s put this knowledge to work. Here is a sample of the number of people in a certain area, where each these areas is some kind of a unit associated with the U.S.:
 
-3,706,690 159,358 106,405 55,519 53,883
+3,706,690
+159,358
+106,405
+55,519
+53,883
 
 We can easily get these into R and calculate the sample mean:
 
-> MysterySample <- c(3706690, 159358, 106405, +    55519, 53883)
+> MysterySample <- c(3706690, 159358, 106405, +
+   55519, 53883)
 > mean(MysterySample)
 [1] 816371
 
@@ -841,7 +903,9 @@ Before we start that, let’s consider why we need an IDE to work with R. In the
 
 If we really want to “do” data science, though, we can’t sit around typing commands every day. First of all, it will become boring very fast. Second of all, whoever is paying us to be a data scientist will get suspicious when he or she notices that we are retyping some of the commands we typed yesterday. Third, and perhaps most important, it is way too easy to make a mistake - to create what computer scientists refer to as a bug - if you are doing every little task by hand. For these reasons, one of our big goals within this book is to create something that is reusable: where we can do a few clicks or type a couple of things and unleash the power of many processing steps. Using an IDE, we can build these kinds of reusable pieces. The IDE gives us the capability to open up the process of creation, to peer into the component parts when we need to, and to close the hood and hide them when we don’t. Because we are working with data, we also need a way of closely inspecting the data, both its contents and its structure. As you probably noticed, it gets pretty tedious doing this at the R console, where almost every piece of output is a chunk of text and longer chunks scroll off the screen before you can see them. As an IDE for R, R-Studio allows us to control and monitor both our code and our text in a way that supports the creation of reusable elements.
 
-Before we can get there, though, we have to have R-Studio installed on a computer. Perhaps the most challenging aspect of installing R-Studio is having to install R first, but if you’ve already done that in chapter 2, then R-Studio should be a piece of cake. Make sure that you have the latest version of R installed before you begin with the installation of R-studio. There is ample documentation on the R-studio website, http://www.rstudio.org/, so if you follow the instructions there, you should have minimal difficulty. If you reach a page where you are asked to choose between installing R-studio server and installing R-studio as a desktop application on your computer, choose the latter. We will look into R-studio server a little later, but for now you want the desktop/single user version. If you run into any difficulties or you just want some additional guidance about R-studio, you may want to have a look at the book entitled, Getting Started with R-studio, by John Verzani (2011, Sebastopol, CA: O’Reilly Media). The first chapter of that book has a general orientation to R and R-studio as well as a guide to installing and updating R-studio. There is also a YouTube video that introduces R-studio here:   http://www.youtube.com/watch?v=7sAmqkZ3Be8  Be aware if you search for other YouTube videos that there is a disk recovery program as well a music group that share the R-Studio name: You will get a number of these videos if you search on “R-Studio” without any other search terms.
+Before we can get there, though, we have to have R-Studio installed on a computer. Perhaps the most challenging aspect of installing R-Studio is having to install R first, but if you’ve already done that in chapter 2, then R-Studio should be a piece of cake. Make sure that you have the latest version of R installed before you begin with the installation of R-studio. There is ample documentation on the R-studio website, http://www.rstudio.org/, so if you follow the instructions there, you should have minimal difficulty. If you reach a page where you are asked to choose between installing R-studio server and installing R-studio as a desktop application on your computer, choose the latter. We will look into R-studio server a little later, but for now you want the desktop/single user version. If you run into any difficulties or you just want some additional guidance about R-studio, you may want to have a look at the book entitled, Getting Started with R-studio, by John Verzani (2011, Sebastopol, CA: O’Reilly Media). The first chapter of that book has a general orientation to R and R-studio as well as a guide to installing and updating R-studio. There is also a YouTube video that introduces R-studio here:  
+http://www.youtube.com/watch?v=7sAmqkZ3Be8 
+Be aware if you search for other YouTube videos that there is a disk recovery program as well a music group that share the R-Studio name: You will get a number of these videos if you search on “R-Studio” without any other search terms.
 
 Once you have installed R-Studio, you can run it immediately in order to get started with the activities in the later parts of this chapter. Unlike other introductory materials, we will not walk through all of the different elements of the R-Studio screen. Rather, as we need each feature we will highlight the new aspect of the application. When you run R-Studio, you will see three or four sub-windows. Use the File menu to click “New” and in the sub-menu for “New” click “R Script.” This should give you a screen that looks something like this:
 
@@ -956,7 +1020,8 @@ There are only six elements in this list, so it doesn’t match up as it should 
 MyMode <- function(myVector)
 {
   uniqueValues <- unique(myVector)
-  uniqueCounts <- tabulate( +                 match(myVector,uniqueValues))
+  uniqueCounts <- tabulate( + 
+               match(myVector,uniqueValues))
   
   return(uniqueValues[which.max(uniqueCounts)])
 }
@@ -1041,7 +1106,8 @@ EnsurePackage<-function(x)
   x <- as.character(x)
   if (!require(x,character.only=TRUE))
   {
-    install.packages(pkgs=x,+          repos="http://cran.r-project.org")
+    install.packages(pkgs=x,+
+         repos="http://cran.r-project.org")
     require(x,character.only=TRUE)
   }
 }
@@ -1124,24 +1190,30 @@ to find out how many items are in your list. The list obtained for this exercise
 
 Happily, we can get some help from R in converting this list into a dataframe. Here we will introduce four powerful new R functions: as(), lapply(), rbind(), and do.call(). The first of these, as(), performs a type coercion: in other words it changes one type to another type. The second of these, lapply(), applies a function onto all of the elements of a list. In the command below, lapply(tweetList, as.data.frame), applies the as.data.frame() coercion to each element in tweetList. Next, the rbind() function “binds” together the elements that are supplied to it into a row-by-row structure. Finally, the do.call() function executes a function call, but unlike just running the function from the console, allows for a variable number of arguments to be supplied to the function. The whole command we will use looks like this:
 
-tweetDF <- do.call("rbind", lapply(tweetList, +                     as.data.frame))
+tweetDF <- do.call("rbind", lapply(tweetList, +
+                    as.data.frame))
 
 You might wonder a few things about this command. One thing that looks weird is “rbind” in double quotes. This is the required method of supplying the name of the function to do.call(). You might also wonder why we needed do.call() at all. Couldn’t we have just called rbind() directly from the command line? You can try it if you want, and you will find that it does provide a result, but not the one you want. The difference is in how the arguments to rbind() are supplied to it: if you call it directly, lapply() is evaluated first, and it forms a single list that is then supplied to rbind(). In contrast, by using do.call(), all 500 of the results of lapply() are supplied to rbind() as individual arguments, and this allows rbind() to create the nice rectangular dataset that we will need. The advantage of do.call() is that it will set up a function call with a variable number of arguments in cases where we don’t know how many arguments will be supplied at the time when we write the code. 
 
 If you run the command above, you should see in the upper right hand pane of R-studio a new entry in the workspace under the heading of “Data.” For the example we are running here, the entry says, “500 obs. of 10 variables.” This is just what we wanted, a nice rectangular data set, ready to analyze. Later on, we may need more than one of these data sets, so let’s create a function to accomplish the commands we just ran:
 
-# TweetFrame() - Return a dataframe based on a #                search of Twitter
+# TweetFrame() - Return a dataframe based on a
+#                search of Twitter
 TweetFrame<-function(searchTerm, maxTweets)
 {
   twtList<-searchTwitter(searchTerm,n=maxTweets)  
-  return(do.call("rbind",+                 lapply(twtList,as.data.frame)))
+  return(do.call("rbind",+
+                lapply(twtList,as.data.frame)))
 }
 
 There are three good things about putting this code in a function. First, because we put a comment at the top of the function, we will remember in the future what this code does. Second, if you test this function you will find out that the variable twtList that is created in the code above does not stick around after the function is finished running. This is the result of what computer scientists call “variable scoping.” The variable twtList only exists while the TweetFrame() function is running. Once the function is done, twtList evaporates as if it never existed. This helps us to keep our workspace clean and avoid collecting lots of intermediate variables  that are not reused.
 
 The last and best thing about this function is that we no longer have to remember the details of the method for using do.call(), rbind(), lapply(), and as.data.frame() because we will not have to retype these commands again: we can just call the function whenever we need it. And we can always go back and look at the code later. In fact, this would be a good reason to put in a comment just above the return() function. Something like this:
 
-# as.data.frame() coerces each list element into a row # lapply() applies this to all of the elements in twtList # rbind() takes all of the rows and puts them together # do.call() gives rbind() all the rows as individual elements
+# as.data.frame() coerces each list element into a row
+# lapply() applies this to all of the elements in twtList
+# rbind() takes all of the rows and puts them together
+# do.call() gives rbind() all the rows as individual elements
 
 Now, whenever we want to create a new data set of tweets, we can just call TweetFrame from the R console command line like this:
 
@@ -1245,7 +1317,8 @@ http://www.khanacademy.org/math/probability/v/poisson-process-2
 https://support.twitter.com/articles/49309 (hashtags explained)
 http://www.rdatamining.com/examples/text-mining 
 
-R Script - Create Vector of Probabilities From Arrival Times
+
+R Script - Create Vector of Probabilities From Arrival Times
 
 # ArrivalProbability - Given a list of arrival times
 # calculates the delays between them using lagged differences
@@ -1336,7 +1409,9 @@ It is pretty easy to see the different shape and position of this histogram, whi
 
 This command generated 1000 new random numbers, following the Poisson distribution and also with a hoped-for mean of 10, just like in the histogram on the next page. Using the “<=” inequality test and the sum() function, we then counted up how many events were less than or equal to 12, and this turned out to be 597 events. As a fraction of the total of n=1000 data points that rpois() generated, that is 0.597, or 59.7%.  
 ￼
-We can look at the same kind of data in terms of the probability of arrival within a certain amount of time. Because rpois() generates delay times directly (rather than us having to calculate them from neighboring arrival times), we will need a slightly different function than the ArrivalProbabilities() that we wrote and used in the previous chapter. We’ll call this function “DelayProbability” (the code is at the end of this chapter):
+
+
+We can look at the same kind of data in terms of the probability of arrival within a certain amount of time. Because rpois() generates delay times directly (rather than us having to calculate them from neighboring arrival times), we will need a slightly different function than the ArrivalProbabilities() that we wrote and used in the previous chapter. We’ll call this function “DelayProbability” (the code is at the end of this chapter):
 
 > DelayProbability(rpois(100,10),1,20)
  [1] 0.00 0.00 0.00 0.03 0.06 0.09 0.21 0.33 0.48 0.61 0.73 0.82 0.92
@@ -1393,7 +1468,8 @@ We also know, from the histograms and output earlier in the chapter, that we can
 > qpois(0.58303,lambda=10)
 [1] 10
 
-In the first command, we confirm that for a very large random sample of n=100,000 with a desired mean of 10, the actual mean of the random sample is almost exactly 10. Likewise, for another large random sample with a desired mean of 10, the variance is 10. In the next command, we use the inequality test and the sum() function again to learn that the probability of observing a value of 10 or less in a very large sample is about 0.59 (note that the sum() function yielded 58,638 and we divided by 100,000 to get the reported value of 0.58638). Likewise, when we ask for the theoretical distribution with ppois() of observing 10 or less in a sample with a mean of 10, we get a probability of 0.58303, which is darned close to the empirical result from the previous command. Finally, if we ask qpois() what is the threshold value for a probability of 0.58303 is in a Poisson sample with mean of 10, we get back the answer: 10. You may see that qpois() does the reverse of what ppois() does. For fun, try this formula on the R command line:  	qpois(ppois(10, lambda=10), lambda=10)
+In the first command, we confirm that for a very large random sample of n=100,000 with a desired mean of 10, the actual mean of the random sample is almost exactly 10. Likewise, for another large random sample with a desired mean of 10, the variance is 10. In the next command, we use the inequality test and the sum() function again to learn that the probability of observing a value of 10 or less in a very large sample is about 0.59 (note that the sum() function yielded 58,638 and we divided by 100,000 to get the reported value of 0.58638). Likewise, when we ask for the theoretical distribution with ppois() of observing 10 or less in a sample with a mean of 10, we get a probability of 0.58303, which is darned close to the empirical result from the previous command. Finally, if we ask qpois() what is the threshold value for a probability of 0.58303 is in a Poisson sample with mean of 10, we get back the answer: 10. You may see that qpois() does the reverse of what ppois() does. For fun, try this formula on the R command line: 
+	qpois(ppois(10, lambda=10), lambda=10)
 
 Here’s one last point to cap off this thinking. Even with a sample of 100,000 there is some variation in samples. That’s why the 0.58638 from the sum() function above does not exactly match the theoretical 0.58303 from the ppois() function above. We can ask R to tell us how much variation there is around one of these probabilities using the poisson.test() function like this:
 
@@ -1428,11 +1504,13 @@ tweetDF <- TweetFrame(“#ladygaga”,500)
 
 Next, we need to sort the tweets by arrival time, That is, of course, unless you accepted the Chapter Challenge in the previous chapter and built the sorting into your TweetFrame() function.
 
-sortweetDF<-tweetDF[order(as.integer( +                               tweetDF$created)), ]
+sortweetDF<-tweetDF[order(as.integer( + 
+                             tweetDF$created)), ]
 
 Now, we’ll extract a vector of the time differences. In the previous chapter the use of the diff() function occurred within the ArrivalProbability() function that we developed. Here we will use it directly and save the result in a vector:
 
-eventDelays<- +               as.integer(diff(sortweetDF$created))
+eventDelays<- + 
+             as.integer(diff(sortweetDF$created))
 
 Now we can calculate a few of the things we need in order to get a picture of the arrival delays for Lady Gaga’s tweets:
 > mean(eventDelays)
@@ -1451,8 +1529,10 @@ So, this result suggests that for 95% of the Lady Gaga samples of tweets that we
 Now let’s get the same data for Oprah:
 
 > tweetDF <- TweetFrame("#oprah",500)
-> sortweetDF<-tweetDF[order( +                    as.integer(tweetDF$created)), ]
-> eventDelays<- +              as.integer(diff(sortweetDF$created))
+> sortweetDF<-tweetDF[order( + 
+                  as.integer(tweetDF$created)), ]
+> eventDelays<- +
+             as.integer(diff(sortweetDF$created))
 > mean(eventDelays)
 [1] 423.01
 
@@ -1467,7 +1547,11 @@ attr(,"conf.level")
 The sum() function, above, calculates that only 73 out of Oprah’s sample of 500 tweets arrive in an interval of 31 or less. We use 31, the mean of the Lady Gaga sample, because we need to have a common basis of comparison. So for Oprah, the proportion of events that occur in the 31 second timeframe is, 73/500 = 0.146, or about 14.6%. That’s a lot lower than the 66.6% of Lady Gaga tweets, for sure, but we need to look at the confidence interval around that value. So the poisson.test() function just above for Oprah reports that the 95% confidence interval runs from about 11.4% to 18.4%. Note that this confidence interval does not overlap at all with the confidence interval for Lady Gaga, so we have a very strong sense that these two rates are statistically quite distinctive - in other words, this is a difference that was not caused by the random influences that sampling always creates. We can make a bar graph to summarize these differences. We’ll use the barplot2() function, which is in a package called gplots(). If you created the EnsurePackage() function a couple of chapters ago, you can use that. Otherwise make sure to load gplots manually:
 
 > EnsurePackage("gplots")
-> barplot2(c(0.666,0.146), +  		ci.l=c(0.596,0.114), +  		ci.u=c(0.742,0.184), + 		plot.ci=TRUE, + 		names.arg=c("Gaga","Oprah"))
+> barplot2(c(0.666,0.146), + 
+		ci.l=c(0.596,0.114), + 
+		ci.u=c(0.742,0.184), +
+		plot.ci=TRUE, +
+		names.arg=c("Gaga","Oprah"))
 
 This is not a particularly efficient way to use the barplots() function, because we are supplying our data by typing it in, using the c() function to create short vectors of values on the command line. On the first line,, we supply a list of the means from the two samples, expressed as proportions. On the next two lines we first provide the lower limits of the confidence intervals and then the upper limits. The plot.ci=TRUE parameter asks barplot2() to put confidence interval whiskers on each bar. The final line provides labels to put underneath the bars. Here’s what we get:
 
@@ -1535,7 +1619,8 @@ sum() - Adds together a list of numbers
 TweetFrame() - Custom procedure yielding a dataset of tweets
 var() - Calculates variance of a list of numbers
 
-R Script - Create Vector of Probabilities From Delay Times
+
+R Script - Create Vector of Probabilities From Delay Times
 # Like ArrivalProbability, but works with unsorted list
 # of delay times
 DelayProbability<-function(delays, increment, max)
@@ -1796,7 +1881,8 @@ So elements [[30]] and [[31]] of the data returned from str_match_all() each con
 
 Let’s go ahead and store the output from str_match_all() into a new vector on tweetDF and then see what we can do to tally up the URLs we have found:
 
-> tweetDF$urlist<-str_match_all(text,+                  "http://t.co/[a-z,A-Z,0-9]{8}")
+> tweetDF$urlist<-str_match_all(text,+
+                 "http://t.co/[a-z,A-Z,0-9]{8}")
 > detach(tweetDF)
 > attach(tweetDF)
 > head(tweetDF$urlist,2)
@@ -1900,7 +1986,8 @@ http://mashable.com/2010/08/14/twitter-140-bug/
 http://stat.ethz.ch/R-manual/R-devel/library/base/html/search.html 
 http://stat.ethz.ch/R-manual/R-devel/library/base/html/table.html
 
-R Code for TweetFrame() Function
+
+R Code for TweetFrame() Function
 
 # TweetFrame() - Return a dataframe based on a search of Twitter
 TweetFrame<-function(searchTerm, maxTweets)
@@ -1958,7 +2045,8 @@ To begin, make sure that the tm package is installed and “library-ed” in you
 A corpus with 100 text documents
 > tweetCorpus<-tm_map(tweetCorpus, tolower)
 > tweetCorpus<-tm_map(tweetCorpus, removePunctuation)
-> tweetCorpus<-tm_map(tweetCorpus,removeWords,+                                 stopwords('english'))
+> tweetCorpus<-tm_map(tweetCorpus,removeWords,+
+                                stopwords('english'))
 
 In the first step above , we “coerce” our cleanText vector into a custom “Class” provided by the tm package and called a “Corpus,” storing the result in a new data object called “tweetCorpus.” This is the first time we have directly encountered a “Class.” The term “class” comes from an area of computer science called “object oriented programming.” Although R is different in many ways from object-oriented languages such as Java, it does contain many of the most fundamental features that define an object oriented language. For our purposes here, there are just a few things to know about a class. First, a class is nothing more or less than a definition for the structure of a data object. Second, classes use basic data types, such as numbers, to build up more complex data structures. For example, if we made up a new “Dashboard” class, it could contain one number for “Miles Per Hour,” another number for “RPM,” and perhaps a third one indicating the remaining “Fuel Level.” That brings up another point about Classes: users of R can build their own. In this case, the author of the tm package, Ingo Feinerer, created a new class, called Corpus, as the central data structure for text mining functions. (Feinerer is a computer science professor who works at the Vienna University of Technology in the Database and Artificial Intelligence Group.) Last, and most important for this discussion, a Class not only contains definitions about the structure of data, it also contains references to functions that can work on that Class. In other words, a Class is a data object that carries with it instructions on how to do operations on it, from simple things like add and subtract all the way up to complicated operations such as graphing.
 
@@ -1989,8 +2077,10 @@ As a first step we need to install and library() the “wordcloud” package. As
 Once the wordcloud package is loaded, we need to do a little preparation to get our data ready to submit to the word cloud generator function. That function expects two vectors as input arguments, the first a list of the terms, and the second a list of the frequencies of occurrence of the terms. The list of terms and frequencies must be sorted with the most frequent terms appearing first. To accomplish this we first have to coerce our tweet data back into a plain data matrix so that we can sort it by frequency. The first command below accomplishes this:
 
 > tdMatrix <- as.matrix(tweetTDM)
-> sortedMatrix<-sort(rowSums(tdMatrix),+                               decreasing=TRUE)
-> cloudFrame<-data.frame( +    word=names(sortedMatrix),freq=sortedMatrix)
+> sortedMatrix<-sort(rowSums(tdMatrix),+
+                              decreasing=TRUE)
+> cloudFrame<-data.frame( +
+   word=names(sortedMatrix),freq=sortedMatrix)
 > wordcloud(cloudFrame$word,cloudFrame$freq)
 
 In the next command above, we are accomplishing two things in one command: We are calculating the sums across each row, which gives us the total frequency of a term across all of the different tweets/documents. We are also sorting the resulting values with the highest frequencies first. The result is a named list: Each item of the list has a frequency and the name of each item is the term to which that frequency applies.
@@ -2023,7 +2113,8 @@ CleanTweets<-function(tweets)
   # Remove redundant spaces
   tweets <- str_replace_all(tweets,"  "," ")
   # Get rid of URLs
-  tweets <- str_replace_all(tweets, +                 "http://t.co/[a-z,A-Z,0-9]{8}","")
+  tweets <- str_replace_all(tweets, + 
+               "http://t.co/[a-z,A-Z,0-9]{8}","")
   # Take out retweet header, there is only one
   tweets <- str_replace(tweets,"RT @[a-z,A-Z]*: ","")
   # Get rid of hashtags
@@ -2047,11 +2138,15 @@ The most important stuff is on the left side. Heading controls whether or not th
 
 Of course, we skipped ahead a bit here because we assumed that an appropriate file of data was available. It might be useful to see some examples of human readable data:
 
-Name, Age, Gender “Fred”,22,”M” “Ginger”,21,”F”
+Name, Age, Gender
+“Fred”,22,”M”
+“Ginger”,21,”F”
 
 The above is a very simple example of a comma delimited file where the first row contains a “header,” i.e. the information about the names of variables. The second and subsequent rows contain actual data. Each field is separated by a comma, and the text strings are enclosed in double quotes. The same file tab-delimited might look like this:
 
-Name	Age	Gender “Fred”	22	”M” “Ginger”	21	”F”
+Name	Age	Gender
+“Fred”	22	”M”
+“Ginger”	21	”F”
 
 Of course you can’t see the tab characters on the screen, but there is one tab character in between each pair of values. In each case, for both comma- and tab-delimited, one line equals one row. The end of a line is marked, invisibly, with a so called “newline” character. On occasion you may run into differences between different operating systems on how this end of line designation is encoded. 
 
@@ -2086,7 +2181,8 @@ http://cran.r-project.org/web/packages/gdata/gdata.pdf
 
 A review of the documentation reveals that the only required argument to this function is the location of the XLS file, and that this location can be a pathname, a web location with http, or an Internet location with ftp (file transfer protocol, a way of sending and receiving files without using a web browser). If you hearken back to a very early chapter in this book, you may remember that we accessed some census data that had population counts for all the different U.S. states. For this example, we are going to read the Excel file containing that data directly into a dataframe using the read.xls() function:
 
-> testFrame<-read.xls( + "http://www.census.gov/popest/data/state/totals/2011/tables/NST-EST2011-01.xls")
+> testFrame<-read.xls( +
+"http://www.census.gov/popest/data/state/totals/2011/tables/NST-EST2011-01.xls")
 trying URL 'http://www.census.gov/popest/data/state/totals/2011/tables/NST-EST2011-01.xls'
 Content type 'application/vnd.ms-excel' length 31232 bytes (30 Kb)
 opened URL
@@ -2150,7 +2246,8 @@ We’ve used a little hack here to avoid typing out the ridiculously long name o
 
 Next, we can change formats and data types as needed. We can remove the dots from in front of the state names very easily with str_replace():
 
-> testFrame$region <- str_replace( +                        testFrame$region,"\\.","")
+> testFrame$region <- str_replace( +
+                       testFrame$region,"\\.","")
 
 Don’t forget that str_replace() is part of the stringr package, and you will have to use install.packages() and library() to load it if it is not already in place. The two backslashes in the string expression above are called “escape characters” and they force the dot that follows to be treated as a literal dot rather than as a wildcard character. The dot on its own is a wildcard that matches one instance of any character.
 
@@ -2225,7 +2322,8 @@ character(0)
 
 The response “character(0)” means that there is an empty list, so no tables are available to us. This is not surprising, because we just installed MySQL and have not used it for anything yet. Unless you have another database available to import into MySQL, we can just use the census data we obtained earlier in the chapter to create a table in MySQL:
 
-> dbWriteTable(con, "census", testFrame, +                overwrite = TRUE)
+> dbWriteTable(con, "census", testFrame, +
+               overwrite = TRUE)
 [1] TRUE
 
 Take note of the arguments supplied to the dbWriteTable() function. The first argument provides the database connection that we established with the dbConnect() function. The “census” argument gives our new table in MySQL a name. We use testFrame as the source of data - as noted above a dataframe and a relational database table are very similar in structure. Finally, we provide the argument overwrite=TRUE, which was not really needed in this case - because we know that there were no existing tables - but could be important in other operations where we need to make sure to replace any old table that may have been left around from previous work. The function returns the logical value TRUE to signal that it was able to finish the request that we made. This is important in programming new functions because we can use the signal of success or failure to guide subsequent steps and provide error or success messages.
@@ -2237,7 +2335,8 @@ Now if we run dbListTables() we should see our new table:
 
 Now we can run an SQL query on our table:
 
-> dbGetQuery(con, "SELECT region, july11pop FROM    census WHERE july11pop<1000000")
+> dbGetQuery(con, "SELECT region, july11pop FROM   
+census WHERE july11pop<1000000")
                 region july11pop
 1               Alaska    722718
 2             Delaware    907135
@@ -2294,7 +2393,8 @@ In the first command above, we have used lapply() to perform a function on the i
 After installing both Hadoop and RHadoop - which, again, is not an official package, and therefore has to be installed manually - we can perform this same operation with two commands:
 
 > small.ints <- to.dfs(1:10)
-> out <- mapreduce(input = small.ints, +               map = function(k,v) keyval(v, v^2))
+> out <- mapreduce(input = small.ints, +
+              map = function(k,v) keyval(v, v^2))
 
 In the first command, we again create a list of integers from one to ten. But rather than simply storing them in a vector, we are using the “distributed file system” or dfs class that is provided by RHadoop. Note that in most cases we would not need to create this ourselves because our large dataset would already exist on the HDFS (Hadoop Distributed FIle System). We would have connected to HDFS and selected the necessary data much as we did earlier in this chapter with dbConnect(). 
 
@@ -2359,7 +2459,8 @@ To get started, we will need two new R packages called PBSmapping and maptools. 
 
 Before we read in the data we grabbed from the Census Bureau, let’s set the working directory in R-Studio so that we don’t have to type it out on the command line. Click on the Tools menu and then choose “Set Working Directory.” Use the dialog box to designate the folder where you have unzipped the shape data. After that, these commands will load the shape data into R and show us what we have:
 
-> usShape <- importShapefile( +            "gz_2010_us_040_00_500k",readDBF=TRUE)
+> usShape <- importShapefile( +
+           "gz_2010_us_040_00_500k",readDBF=TRUE)
 > summary(usShape)
 PolySet
 Records         : 90696
@@ -2381,7 +2482,8 @@ This last command gives us a simple plot of the 90,696 shapes that our shapefile
 
 ￼This is funny looking! The ranges output from the summary() command gives us a hint as to why. The longitude of the elements in our map range from -179 to nearly 180: this covers pretty much the whole of the planet. The reason is that the map contains shapes for Hawaii and Alaska. Both states have far western longitudes, but the Aleutian peninsula in Alaska extends so far that it crosses over the longitude line where -180 and 180 meet in the Pacific Ocean. As a result, the continental U.S. is super squashed. We can specify a more limited area of the map to consider by using the xlim and ylim parameters. The following command:
 
-> plotPolys(usShape,+                   xlim=c(-130,-60),ylim=c(20,50))
+> plotPolys(usShape,+
+                  xlim=c(-130,-60),ylim=c(20,50))
 ...gives a plot that shows the continental U.S. more in its typical proportions.
 
 ￼So now we have some map data stored away and ready to use. The PBSmapping package gives us the capability of adding points to an existing map. For now, let’s demonstrate this with a made up point somewhere in Texas:
@@ -2390,7 +2492,8 @@ This last command gives us a simple plot of the 90,696 shapes that our shapefile
 > Y <- 30
 > EID <- 1
 > pointData <- data.frame(EID,X,Y)
-> eventData <- as.EventData( +                          pointData,projection=NA)
+> eventData <- as.EventData( +
+                         pointData,projection=NA)
 > addPoints(eventData,col="red",cex=.5)
 
 ￼You have to look carefully, but in southern Texas there is now a little red dot. We began by manually creating a single point - specified by X (longitude), Y (latitude), and EID (an identification number) - and sticking it into a dataframe. Then we converted the data in that dataframe into an EventData object. This is a custom class of object specified by the PBSmapping package. The final command above adds the EventData to the plot. 
@@ -2417,7 +2520,8 @@ Next, we need a source of points to add to our map. This could be anything that 
 
 There’s that crazy 60s song again! Anyhow, we read in a comma separated data set with 599 rows and 10 variables. The most important field we have there is Contractor.Address. This contains the street addresses that we need to geocode. We note, however, that the data type for these is Factor rather than character string. So we need to convert that:
 
-> dhhsAddrs$strAddr <- +        as.character(dhhsAddrs$Contractor.Address)
+> dhhsAddrs$strAddr <- +
+       as.character(dhhsAddrs$Contractor.Address)
 > mode(dhhsAddrs$strAddr)
 [1] "character"
 > tail(dhhsAddrs$strAddr,4)
@@ -2432,7 +2536,8 @@ These acronyms probably look familiar. HTTP is the Hyper Text Transfer Protocol,
 
 http://maps.googleapis.com/maps/api/geocode/json?address=1600+Pennsylvania+Avenue,+Washington,+DC&sensor=false
 
-The first part of this should look familiar: The http://maps.googleapis.com part of the URL specifies the domain name just like a regular web page. The next part of the URL,  “/maps/api/geocode” tells Google which API we want to use. Then the “json” indicates that we would like to receive our result in “Java Script Object Notation” (JSON) which is a structured, but human readable way of sending back some data. The address appears next, and we are apparently looking for the White House at 1600 Pennsylvania Avenue in Washington, DC. Finally, sensor=false is a required parameter indicating that we are not sending our request from a mobile phone. You can type that whole URL into the address field of any web browser and you should get a sensible result back. The JSON notation is not beautiful, but you will see that it makes sense and provides the names of individual data items along with their values. Here’s a small excerpt that shows the key parts of the data object that we are trying to get our hands on:
+The first part of this should look familiar: The http://maps.googleapis.com part of the URL specifies the domain name just like a regular web page. The next part of the URL, 
+“/maps/api/geocode” tells Google which API we want to use. Then the “json” indicates that we would like to receive our result in “Java Script Object Notation” (JSON) which is a structured, but human readable way of sending back some data. The address appears next, and we are apparently looking for the White House at 1600 Pennsylvania Avenue in Washington, DC. Finally, sensor=false is a required parameter indicating that we are not sending our request from a mobile phone. You can type that whole URL into the address field of any web browser and you should get a sensible result back. The JSON notation is not beautiful, but you will see that it makes sense and provides the names of individual data items along with their values. Here’s a small excerpt that shows the key parts of the data object that we are trying to get our hands on:
 
 {
    "results" : [
@@ -2456,13 +2561,15 @@ Next, we will create a new helper function to take the address field and turn it
 MakeGeoURL <- function(address) 
 {
   root <- "http://maps.google.com/maps/api/geocode/" 
-  url <- paste(root, "json?address=", +               address, "&sensor=false", sep = "")
+  url <- paste(root, "json?address=", +
+              address, "&sensor=false", sep = "")
   return(URLencode(url))
 }
 
 There are three simple steps here. The first line initializes the beginning part of the URL into a string called root. Then we use paste() to glue together the separate parts of the strong (note the sep=”” so we don’t get spaces between the parts). This creates a string that looks almost like the one in the White House example two pages ago. The final step converts the string to a legal URL using a utility function called URLencode() that RCurl provides. Let’s try it:
 
-> MakeGeoURL( + "1600 Pennsylvania Avenue, Washington, DC")
+> MakeGeoURL( +
+"1600 Pennsylvania Avenue, Washington, DC")
 [1] "http://maps.google.com/maps/api/geocode/json?address=1600%20Pennsylvania%20Avenue,%20Washington,%20DC&sensor=false"
 
 Looks good! Just slightly different than the original example (%20 instead of the plus character) but hopefully that won’t make a difference. Remember that you can type this function at the command line or you can create it in the script editing window in the upper left hand pane of R-Studio. The latter is the better way to go and if you click the “Source on Save” checkmark, R-Studio will make sure to update R’s stored version of your function every time you save the script file.
@@ -2473,11 +2580,14 @@ Addr2latlng <- function(address)
 {
   url <- MakeGeoURL(address)
   apiResult <- getURL(url)
-  geoStruct <- fromJSON(apiResult, +                                 simplify = FALSE)
+  geoStruct <- fromJSON(apiResult, + 
+                               simplify = FALSE)
   lat <- NA
   lng <- NA  
-  try(lat <- +     geoStruct$results[[1]]$geometry$location$lat)
-  try(lng <- +     geoStruct$results[[1]]$geometry$location$lng)
+  try(lat <- +
+    geoStruct$results[[1]]$geometry$location$lat)
+  try(lng <- +
+    geoStruct$results[[1]]$geometry$location$lng)
   return(c(lat, lng))
 }
 
@@ -2489,7 +2599,8 @@ Note that this is the first time we have encountered the try() function. When pr
 
 In the last step, our new Addr2latlng() function returns a two item list containing the latitude and longitude. We can test it out right now:
 
-> testData <- Addr2latlng( +       "1600 Pennsylvania Avenue, Washington, DC")
+> testData <- Addr2latlng( +
+      "1600 Pennsylvania Avenue, Washington, DC")
 > str(testData)
  num [1:2] 38.9 -77
 
@@ -2500,12 +2611,15 @@ At this point there isn’t too much left to do. We have to create a looping mec
 # Process a whole list of addresses
 ProcessAddrList <- function(addrList)
 {
-  resultDF <- data.frame(atext=character(), +               X=numeric(),Y=numeric(),EID=numeric())
+  resultDF <- data.frame(atext=character(), +
+              X=numeric(),Y=numeric(),EID=numeric())
   i <- 1
   for (addr in addrList)
   {
     latlng = Addr2latlng(addr)
-    resultDF <- rbind(resultDF,+                  data.frame(atext=addr, +                  X=latlng[[2]],Y=latlng[[1]], EID=i))
+    resultDF <- rbind(resultDF,+
+                 data.frame(atext=addr, +
+                 X=latlng[[2]],Y=latlng[[1]], EID=i))
     i <- i + 1
   }
   return(resultDF)
@@ -2559,7 +2673,8 @@ return() - Specifies the object that should be returned from a function
 URLencode() - Formats a character string so it can be used in an HTTP request
 
 
-Sources
+
+Sources
 http://en.wikipedia.org/wiki/Open_Mashup_Alliance 
 http://en.wikipedia.org/wiki/Shapefile 
 http://www.housingmaps.com/ 
