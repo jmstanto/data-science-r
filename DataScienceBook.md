@@ -325,32 +325,41 @@ Note that this is exactly the same command we used in the last chapter, so if yo
 Hey, now you have used the c() function and the assignment arrow to make myFamilyNames and myFamilyAges. If you look at the data table earlier in the chapter you should be able to figure out the commands for creating myFamilyGenders and myFamilyWeights. In case you run into trouble, these commands also appear on the next page, but you should try to figure them out for yourself before you turn the page. In each case after you type the command to create the new data object, you should also type the name of the data object at the command line to make sure that it looks the way it should. Four variables, each one with five values in it. Two of the variables are character data and two of the variables are integer data. Here are those two extra commands in case you need them:
 
 `myFamilyGenders <- c("Male","Female","Female","Male","Female")`
+
 `myFamilyWeights <- c(188,136,83,61,44)`
 
 Now we are ready to tackle the dataframe. In R, a dataframe is a list (of columns), where each element in the list is a vector. Each vector is the same length, which is how we get our nice rectangular  row and column setup, and generally each vector also has its own name. The command to make a data frame is very simple:
 
 `myFamily <- data.frame(myFamilyNames, + myFamilyAges,`
+
 `myFamilyGenders, myFamilyWeights)`
 
 Look out! We’re starting to get commands that are long enough that they break onto more than one line. The + at the end of the first line tells R to wait for more input on the next line before trying to process the command. If you want to, you can type the whole thing as one line in R, but if you do, just leave out the plus sign. Anyway, the data.frame() function makes a dataframe from the four vectors that we previously typed in. Notice that we have also used the assignment arrow to make a new stored location where R puts the data frame. This new data object, called myFamily, is our dataframe. Once you have gotten that command to work, type   myFamily at the command line to get a report back of what the data frame contains. Here’s the output you should see:
 
-  `myFamilyNames myFamilyAges myFamilyGenders myFamilyWeights`
-`1           Dad           43            Male             188`
-`2           Mom           42          Female             136`
-`3           Sis           12          Female              83`
-`4           Bro            8            Male              61`
-`5           Dog            5          Female              44`
+  myFamilyNames myFamilyAges myFamilyGenders myFamilyWeights
+1           Dad           43            Male             188
+2           Mom           42          Female             136
+3           Sis           12          Female              83
+4           Bro            8            Male              61
+5           Dog            5          Female              44
 
 This looks great. Notice that R has put row numbers in front of each row of our data. These are different from the output line numbers we saw in brackets before, because these are actual “indices” into the data frame. In other words, they are the row numbers that R uses to keep track of which row a particular piece of data is in.
 With a small data set like this one, only five rows, it is pretty easy just to take a look at all of the data. But when we get to a bigger data set this won’t be practical. We need to have other ways of summarizing what we have. The first method reveals the type of “structure” that R has used to store a data object. 
 
 `> str(myFamily)`
+
 `'data.frame':	5 obs. of  4 variables:`
+
 `$ myFamilyNames  : Factor w/ 5 levels` 
+
 		`"Bro","Dad","Dog",..: 2 4 5 1 3`
+
  `$ myFamilyAges   : num  43 42 12 8 5`
+
  `$ myFamilyGenders: Factor w/ 2 levels` 
+
 		`"Female","Male": 2 1 1 2 1`
+
  `$ myFamilyWeights: num  188 136 83 61 44`
 
 Take note that for the first time, the example shows the command prompt “>” in order to differentiate the command from the output that follows. You don’t need to type this: R provides it whenever it is ready to receive new input. From now on in the book, there will be examples of R commands and output that are mixed together, so always be on the lookout for “>” because the command after that is what you have to type.
@@ -367,7 +376,7 @@ For example, myFamilyGenders is shown as a “Factor.” In the terminology that
 
 Phew, that was complicated! By contrast, our two numeric variables, myFamilyAges and myFamilyWeights, are very simple. You can see that after the colon the mode is shown as “num” (which stands for numeric) and that the first few values are reported:
 
-$ myFamilyAges   : num  43 42 12 8 5
+`$ myFamilyAges   : num  43 42 12 8 5`
 
 Putting it altogether, we have pretty complete information about the myFamily dataframe and we are just about ready to do some more work with it. We have seen firsthand that R has some pretty cryptic labels for things as well as some obscure strategies for converting this to that. R was designed for experts, rather than novices, so we will just have to take our lumps so that one day we can be experts too.
 
