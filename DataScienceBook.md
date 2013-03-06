@@ -243,11 +243,11 @@ Using logic and online resources to get help if you need it, learn how to use th
 
 **R Functions Used in This Chapter**
 
-* c()  	Concatenates data elements together
-* <- 		Assignment arrow
-* sum()	Adds data elements
-* range()	Max value minus min value
-* mean()	The average
+c()  	Concatenates data elements together
+<- 		Assignment arrow
+sum()	Adds data elements
+range()	Max value minus min value
+mean()	The average
 
 
 ## Chapter 4
@@ -267,8 +267,8 @@ Fortunately there is an extensive area of study and practice called “data mode
 
 Entity-relationship modeling occurs at different levels ranging from an abstract conceptual level to a physical storage level. At the conceptual level an entity is an object or thing, usually something in the real world. In the doctor’s office example, one important “object” is the patient. Another entity is the doctor. The patient and the doctor are linked by a relationship: in modern health care lingo this is the “provider” relationship. If the patient is Mr. X and the doctor is Dr. Y, the provider relationship provides a bidirectional link: 
 
-Dr. Y is the provider for Mr. X
-Mr. X’s provider is Dr. Y
+* Dr. Y is the provider for Mr. X
+* Mr. X’s provider is Dr. Y
 
 Naturally there is a range of data that can represent Mr. X: name address, age, etc. Likewise, there are data that represent Dr. Y: years of experience as a doctor, specialty areas, certifications, licenses. Importantly, there is also a chunk of data that represents the linkage between X and Y, and this is the relationship.
 
@@ -278,12 +278,23 @@ In an application area like health care, there are so many choices for different
 
 Whatever the goal, the data scientist has an important and difficult challenge of taking the methods of today - including paper forms and manual data entry - and imagining the methods of tomorrow. Follow the data!
 
-Sources
-http://en.wikipedia.org/wiki/Data_modeling 
-http://en.wikipedia.org/wiki/Entity-relationship_diagram 
+**Sources**
+[http://en.wikipedia.org/wiki/Data_modeling](http://en.wikipedia.org/wiki/Data_modeling)
+[http://en.wikipedia.org/wiki/Entity-relationship_diagram](http://en.wikipedia.org/wiki/Entity-relationship_diagram)
+
+## Chapter 5
+# Rows and Columns
 
 
 Although we live in a three dimensional world, where a box of cereal has height, width, and depth, it is a sad fact of modern life that pieces of paper, chalkboards, whiteboards, and computer screens are still only two dimensional. As a result, most of the statisticians, accountants, computer scientists, and engineers who work with lots of numbers tend to organize them in rows and columns. There’s really no good reason for this other than it makes it easy to fill a rectangular piece of paper with numbers. Rows and columns can be organized any way that you want, but the most common way is to have the rows be “cases” or “instances” and the columns be “attributes” or “variables.” Take a look at this nice, two dimensional representation of rows and columns:
+
+| NAME          | AGE         | GENDER     | WEIGHTS |
+| ------------- |-------------| -----------| --------|
+| Dad						| 43 					| Male 			 | 188		 |
+| Mom   				| 42						| Female 		 | 136		 |
+| Sis      			| 12						| Female 		 | 83			 |
+| Bro        		| 8						| Male 			 | 61			 |
+| Dog        		| 5						| Female 		 | 44			 |
 
 Pretty obvious what’s going on, right? The top line, in bold, is not really part of the data. Instead, the top line contains the attribute or variable names. Note that computer scientists tend to call them attributes while statisticians call them variables. Either term is OK. For example, age is an attribute that every living thing has, and you could count it in minutes, hours, days, months, years, or other units of time. Here we have the Age attribute calibrated in years. Technically speaking, the variable names in the top line are “metadata” or what you could think of as data about data. Imagine how much more difficult it would be to understand what was going on in that table without the metadata. There’s lot of different kinds of metadata: variable names are just one simple type of metadata.
 
@@ -293,54 +304,54 @@ One other important note: Look how each column contains the same kind of data al
 
 Now let’s figure out how to get these rows and columns into R. One thing you will quickly learn about R is that there is almost always more than one way to accomplish a goal. Sometimes the quickest or most efficient way is not the easiest to understand. In this case we will build each column one by one and then join them together into a single data frame. This is a bit labor intensive, and not the usual way that we would work with a data set, but it is easy to understand. First, run this command to make the column of names:
 
-myFamilyNames <- c(”Dad”,”Mom”,”Sis”,”Bro”,”Dog”)
+`myFamilyNames <- c(”Dad”,”Mom”,”Sis”,”Bro”,”Dog”)`
 
 One thing you might notice is that every name is placed within double quotes. This is how you signal to R that you want it to treat something as a string of characters rather than the name of a storage location. If we had asked R to use Dad instead of “Dad” it would have looked for a storage location (a data object) named Dad. Another thing to notice is that the commas separating the different values are outside of the double quotes. If you were writing a regular sentence this is not how things would look, but for computer programming the comma can only do its job of separating the different values if it is not included inside the quotes. Once you have typed the line above, remember that you can check the contents of myFamilyNames by typing it on the next command line:
 
-myFamilyNames
+`myFamilyNames`
 
 The output should look like this:
 
-[1] "Dad" "Mom" "Sis" "Bro" "Dog"
+`[1] "Dad" "Mom" "Sis" "Bro" "Dog"`
 
 Next, you can create a vector of the ages of the family members, like this:
 
-myFamilyAges <- c(43, 42, 12, 8, 5)
+`myFamilyAges <- c(43, 42, 12, 8, 5)`
 
 Note that this is exactly the same command we used in the last chapter, so if you have kept R running between then and now you would not even have to retype this command because myFamilyAges would still be there. Actually, if you closed R since working the examples from the last chapter you will have been prompted to “save the workspace” and if you did so, then R restored all of the data objects you were using in the last session. You can always check by typing myFamilyAges on a blank command line. The output should look like this:
 
-[1] 43 42 12  8  5
+`[1] 43 42 12  8  5`
 
 Hey, now you have used the c() function and the assignment arrow to make myFamilyNames and myFamilyAges. If you look at the data table earlier in the chapter you should be able to figure out the commands for creating myFamilyGenders and myFamilyWeights. In case you run into trouble, these commands also appear on the next page, but you should try to figure them out for yourself before you turn the page. In each case after you type the command to create the new data object, you should also type the name of the data object at the command line to make sure that it looks the way it should. Four variables, each one with five values in it. Two of the variables are character data and two of the variables are integer data. Here are those two extra commands in case you need them:
 
-myFamilyGenders <- c("Male","Female","Female","Male","Female")
-
-myFamilyWeights <- c(188,136,83,61,44)
+`myFamilyGenders <- c("Male","Female","Female","Male","Female")`
+`myFamilyWeights <- c(188,136,83,61,44)`
 
 Now we are ready to tackle the dataframe. In R, a dataframe is a list (of columns), where each element in the list is a vector. Each vector is the same length, which is how we get our nice rectangular  row and column setup, and generally each vector also has its own name. The command to make a data frame is very simple:
 
-myFamily <- data.frame(myFamilyNames, + myFamilyAges, myFamilyGenders, myFamilyWeights)
+`myFamily <- data.frame(myFamilyNames, + myFamilyAges,`
+`myFamilyGenders, myFamilyWeights)`
 
 Look out! We’re starting to get commands that are long enough that they break onto more than one line. The + at the end of the first line tells R to wait for more input on the next line before trying to process the command. If you want to, you can type the whole thing as one line in R, but if you do, just leave out the plus sign. Anyway, the data.frame() function makes a dataframe from the four vectors that we previously typed in. Notice that we have also used the assignment arrow to make a new stored location where R puts the data frame. This new data object, called myFamily, is our dataframe. Once you have gotten that command to work, type   myFamily at the command line to get a report back of what the data frame contains. Here’s the output you should see:
 
-  myFamilyNames myFamilyAges myFamilyGenders myFamilyWeights
-1           Dad           43            Male             188
-2           Mom           42          Female             136
-3           Sis           12          Female              83
-4           Bro            8            Male              61
-5           Dog            5          Female              44
+  `myFamilyNames myFamilyAges myFamilyGenders myFamilyWeights`
+`1           Dad           43            Male             188`
+`2           Mom           42          Female             136`
+`3           Sis           12          Female              83`
+`4           Bro            8            Male              61`
+`5           Dog            5          Female              44`
 
 This looks great. Notice that R has put row numbers in front of each row of our data. These are different from the output line numbers we saw in brackets before, because these are actual “indices” into the data frame. In other words, they are the row numbers that R uses to keep track of which row a particular piece of data is in.
 With a small data set like this one, only five rows, it is pretty easy just to take a look at all of the data. But when we get to a bigger data set this won’t be practical. We need to have other ways of summarizing what we have. The first method reveals the type of “structure” that R has used to store a data object. 
 
-> str(myFamily)
-'data.frame':	5 obs. of  4 variables:
- $ myFamilyNames  : Factor w/ 5 levels 
-		"Bro","Dad","Dog",..: 2 4 5 1 3
- $ myFamilyAges   : num  43 42 12 8 5
- $ myFamilyGenders: Factor w/ 2 levels 
-		"Female","Male": 2 1 1 2 1
- $ myFamilyWeights: num  188 136 83 61 44
+`> str(myFamily)`
+`'data.frame':	5 obs. of  4 variables:`
+`$ myFamilyNames  : Factor w/ 5 levels` 
+		`"Bro","Dad","Dog",..: 2 4 5 1 3`
+ `$ myFamilyAges   : num  43 42 12 8 5`
+ `$ myFamilyGenders: Factor w/ 2 levels` 
+		`"Female","Male": 2 1 1 2 1`
+ `$ myFamilyWeights: num  188 136 83 61 44`
 
 Take note that for the first time, the example shows the command prompt “>” in order to differentiate the command from the output that follows. You don’t need to type this: R provides it whenever it is ready to receive new input. From now on in the book, there will be examples of R commands and output that are mixed together, so always be on the lookout for “>” because the command after that is what you have to type.
 
@@ -350,7 +361,7 @@ In the first line of output we have the confirmation that myFamily is a data fra
 
 Each of the four variables has a “mode” or type that is reported by R right after the colon on the line that names the variable:
 
-$ myFamilyGenders: Factor w/ 2 levels 
+`$ myFamilyGenders: Factor w/ 2 levels` 
 
 For example, myFamilyGenders is shown as a “Factor.” In the terminology that R uses, Factor refers to a special type of label that can be used to identify and organize groups of cases. R has organized these labels alphabetically and then listed out the first few cases (because our dataframe is so small it actually is showing us all of the cases). For myFamilyGenders we see that there are two “levels,” meaning that there are two different options: female and male. R assigns a number, starting with one, to each of these levels, so every case that is “Female” gets assigned a 1 and every case that is “Male” gets assigned a 2 (because Female comes before Male in the alphabet, so Female is the first Factor label, so it gets a 1). If you have your thinking cap on, you may be wondering why we started out by typing in small strings of text, like “Male,” but then R has gone ahead and converted these small pieces of text into numbers that it calls “Factors.” The reason for this lies in the statistical origins of R. For years, researchers have done things like calling an experimental group “Exp” and a control, group “Ctl” without intending to use these small strings of text for anything other than labels. So R assumes, unless you tell it otherwise, that when you type in a short string like “Male” that you are referring to the label of a group, and that R should prepare for the use of Male as a “Level” of a “Factor.”  When you don’t want this to happen you can instruct R to stop doing this with an option on the data.frame() function: stringsAsFactors=FALSE. We will look with more detail at options and defaults a little later on.
 
