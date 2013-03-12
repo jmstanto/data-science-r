@@ -400,80 +400,85 @@ myFamilyGenders myFamilyWeights
 
 In order to fit on the page properly, these columns have been reorganized a bit. The name of a column/variable, sits up above the information that pertains to it, and each block of information is independent of the others (so it is meaningless, for instance, that “Bro: 1” and “Min.” happen to be on the same line of output). Notice, as with str(), that the output is quite different depending upon whether we are talking about a Factor, like myFamilyNames or myFamilyGenders, versus a numeric variable like myFamilyAges and myFamilyWeights. The columns for the Factors list out a few of the Factor names along with the number of occurrences of cases that  are coded with that factor. So for instance, under myFamilyGenders it shows three females and two males. In contrast, for the numeric variables we get five different calculated quantities that help to summarize the variable. There’s no time like the present to start to learn about what these are, so here goes:
 
-“Min.” refers to the minimum or lowest value among all the cases. For this dataframe, 5 is the age of the dog and it is the lowest age of all of the family members.
+* “Min.” refers to the minimum or lowest value among all the cases. For this dataframe, 5 is the age of the dog and it is the lowest age of all of the family members.
 
-“1st Qu.” refers to the dividing line at the top of the first quartile. If we took all the cases and lined them up side by side in order of age (or weight) we could then divide up the whole into four groups, where each group had the same number of observations. Just like a number line, the smallest cases would be on the left with the largest on the right. If we’re looking at myFamilyAges, the leftmost group, which contains one quarter of all the cases, would start with five on the low end (the dog) and would have eight on the high end (Bro). So the “first quartile” is the value of age (or another variable) that divides the first quarter of the cases from the other three quarters. Note that if we don’t have a number of cases that divides evenly by four, the value is an approximation.
+* “1st Qu.” refers to the dividing line at the top of the first quartile. If we took all the cases and lined them up side by side in order of age (or weight) we could then divide up the whole into four groups, where each group had the same number of observations. 
 
-Median refers to the value of the case that splits the whole group in half, with half of the cases having higher values and half having lower values. If you think about it a little bit, the median is also the dividing line that separates the second quartile from the third quartile. 
+Just like a number line, the smallest cases would be on the left with the largest on the right. If we’re looking at myFamilyAges, the leftmost group, which contains one quarter of all the cases, would start with five on the low end (the dog) and would have eight on the high end (Bro). So the “first quartile” is the value of age (or another variable) that divides the first quarter of the cases from the other three quarters. Note that if we don’t have a number of cases that divides evenly by four, the value is an approximation.
 
-Mean, as we have learned before, is the numeric average of all of the values. For instance, the average age in the family is reported as 22.
+* Median refers to the value of the case that splits the whole group in half, with half of the cases having higher values and half having lower values. If you think about it a little bit, the median is also the dividing line that separates the second quartile from the third quartile. 
 
-“3rd Qu.” is the third quartile. If you remember back to the first quartile and the median, this is the third and final dividing line that splits up all of the cases into four equal sized parts. You may be wondering about these quartiles and what they are useful for. Statisticians like them because they give a quick sense of the shape of the distribution. Everyone has the experience of sorting and dividing things up - pieces of pizza, playing cards into hands, a bunch of players into teams - and it is easy for most people to visualize four equal sized groups and useful to know how high you need to go in age or weight (or another variable) to get to the next dividing line between the groups. 
+* Mean, as we have learned before, is the numeric average of all of the values. For instance, the average age in the family is reported as 22.
 
-Finally, “Max” is the maximum value and as you might expect displays the highest value among all of the available cases. For example, in this dataframe Dad has the highest weight: 188. Seems like a pretty trim guy.
+* “3rd Qu.” is the third quartile. If you remember back to the first quartile and the median, this is the third and final dividing line that splits up all of the cases into four equal sized parts. You may be wondering about these quartiles and what they are useful for. Statisticians like them because they give a quick sense of the shape of the distribution. Everyone has the experience of sorting and dividing things up - pieces of pizza, playing cards into hands, a bunch of players into teams - and it is easy for most people to visualize four equal sized groups and useful to know how high you need to go in age or weight (or another variable) to get to the next dividing line between the groups. 
+
+* Finally, “Max” is the maximum value and as you might expect displays the highest value among all of the available cases. For example, in this dataframe Dad has the highest weight: 188. Seems like a pretty trim guy.
 
 Just one more topic to pack in before ending this chapter: How to access the stored variables in our new dataframe. R stores the dataframe as a list of vectors and we can use the name of the dataframe together with the name of a vector to refer to each one using the “$” to connect the two labels like this:
 
-> myFamily$myFamilyAges
-[1] 43 42 12  8  5
+`> myFamily$myFamilyAges`
+`[1] 43 42 12  8  5`
 
-If you’re alert you might wonder why we went to the trouble of typing out that big long thing with the $ in the middle, when we could have just referred to “myFamilyAges” as we did earlier when we were setting up the data. Well, this is a very important point. When we created the myFamily dataframe, we copied all of the information from the individual vectors that we had before into a brand new storage space. So now that we have created the myFamily dataframe, myFamilyData$myFamilyAges actually refers to a completely separate (but so far identical) vector of values. You can prove this to yourself very easily, and you should, by adding some data to the original vector, myFamilyAges:
+If you’re alert you might wonder why we went to the trouble of typing out that big long thing with the $ in the middle, when we could have just referred to “myFamilyAges” as we did earlier when we were setting up the data. Well, this is a very important point. When we created the myFamily dataframe, we **copied** all of the information from the individual vectors that we had before into a brand new storage space. So now that we have created the myFamily dataframe, myFamilyData$myFamilyAges actually refers to a completely separate (but so far identical) vector of values. You can prove this to yourself very easily, and you should, by adding some data to the original vector, myFamilyAges:
 
-> myFamilyAges <- c(myFamilyAges, 11)
-> myFamilyAges
-[1] 43 42 12  8  5 11
-> myFamily$myFamilyAges
-[1] 43 42 12  8  5
+`> myFamilyAges <- c(myFamilyAges, 11)`
+`> myFamilyAges`
+`[1] 43 42 12  8  5 11`
+`> myFamily$myFamilyAges`
+`[1] 43 42 12  8  5`
 
 Look very closely at the five lines above. In the first line, we use the c() command to add the value 11 to the original list of ages that we had stored in myFamilyAges (perhaps we have adopted an older cat into the family). In the second line we ask R to report what the vector myFamilyAges now contains. Dutifully, on the third line above, R reports that myFamilyAges now contains the original five values and the new value of 11 on the end of the list. When we ask R to report myFamily$myFamilyAges, however, we still have the original list of five values only. This shows that the dataframe and its component columns/vectors is now a completely independent piece of data. We must be very careful, if we established a dataframe that we want to use for subsequent analysis, that we don’t make a mistake and keep using some of the original data from which we assembled the dataframe.
 
 Here’s a puzzle that follows on from this question. We have a nice dataframe with five observations and four variables. This is a rectangular shaped data set, as we discussed at the beginning of the chapter. What if we tried to add on a new piece of data on the end of one of the variables? In other words, what if we tried something like this command:
 
-myFamily$myFamilyAges<-c(myFamily$myFamilyAges, 11)
+`myFamily$myFamilyAges<-c(myFamily$myFamilyAges, 11)`
 
 If this worked, we would have a pretty weird situation: The variable in the dataframe that contained the family members’ ages would all of a sudden have one more observation than the other variables: no more perfect rectangle! Try it out and see what happens. The result helps to illuminate how R approaches situations like this. 
 
 So what new skills and knowledge do we have at this point? Here are a few of the key points from this chapter:
 
-In R, as in other programs, a vector is a list of elements/things that are all of the same kind, or what R refers to as a mode. For example, a vector of mode “numeric” would contain only numbers. 
+* In R, as in other programs, a vector is a list of elements/things that are all of the same kind, or what R refers to as a mode. For example, a vector of mode “numeric” would contain only numbers. 
 
-Statisticians, database experts and others like to work with rectangular datasets where the rows are cases or instances and the columns are variables or attributes. 
+* Statisticians, database experts and others like to work with rectangular datasets where the rows are cases or instances and the columns are variables or attributes. 
 
-In R, one of the typical ways of storing these rectangular structures is in an object known as a dataframe. Technically speaking a dataframe is a list of vectors where each vector has the exact same number of elements as the others (making a nice rectangle). 
+* In R, one of the typical ways of storing these rectangular structures is in an object known as a dataframe. Technically speaking a dataframe is a list of vectors where each vector has the exact same number of elements as the others (making a nice rectangle). 
 
-In R, the data.frame() function organizes a set of vectors into a dataframe. A dataframe is a conventional, rectangular shaped data object where each column is a vector of uniform mode and having the same number of elements as the other columns in the dataframe. Data are copied from the original source vectors into new storage space. The variables/columns of the dataframe can be accessed using “$” to connect the name of the dataframe to the name of the variable/column.
+* In R, the data.frame() function organizes a set of vectors into a dataframe. A dataframe is a conventional, rectangular shaped data object where each column is a vector of uniform mode and having the same number of elements as the other columns in the dataframe. Data are copied from the original source vectors into new storage space. The variables/columns of the dataframe can be accessed using “$” to connect the name of the dataframe to the name of the variable/column.
 
-The str() and summary() functions can be used to reveal the structure and contents of a dataframe (as well as of other data objects stored by R). The str() function shows the structure of a data object, while summary() provides an numerical summaries of numeric variables and overviews of non-numeric variables.
+* The str() and summary() functions can be used to reveal the structure and contents of a dataframe (as well as of other data objects stored by R). The str() function shows the structure of a data object, while summary() provides an numerical summaries of numeric variables and overviews of non-numeric variables.
 
-A factor is a labeling system often used to organize groups of cases or observations. In R, as well as in many other software programs, a factor is represented internally with a numeric ID number, but factors also typically have labels like “Male” and “Female” or “Experiment” and “Control.” Factors always have “levels,” and these are the different groups that the factor signifies. For example, if a factor variable called Gender codes all cases as either “Male” or “Female” then that factor has exactly two levels. 
+* A factor is a labeling system often used to organize groups of cases or observations. In R, as well as in many other software programs, a factor is represented internally with a numeric ID number, but factors also typically have labels like “Male” and “Female” or “Experiment” and “Control.” Factors always have “levels,” and these are the different groups that the factor signifies. For example, if a factor variable called Gender codes all cases as either “Male” or “Female” then that factor has exactly two levels. 
 
-Quartiles are a division of a sorted vector into four evenly sized groups. The first quartile contains the lowest-valued elements, for example the lightest weights, whereas the fourth quartile contains the highest-valued items. Because there are four groups, there are three dividing lines that separate them. The middle dividing line that splits the vector exactly in half is the median. The term “first quartile” often refers to the dividing line to the left of the median that splits up the lower two quarters and the value of the first quartile is the value of the element of the vector that sits right at that dividing line. Third quartile is the same idea, but to the right of the median and splitting up the two higher quarters.
+* Quartiles are a division of a sorted vector into four evenly sized groups. The first quartile contains the lowest-valued elements, for example the lightest weights, whereas the fourth quartile contains the highest-valued items. Because there are four groups, there are three dividing lines that separate them. The middle dividing line that splits the vector exactly in half is the median. The term “first quartile” often refers to the dividing line to the left of the median that splits up the lower two quarters and the value of the first quartile is the value of the element of the vector that sits right at that dividing line. Third quartile is the same idea, but to the right of the median and splitting up the two higher quarters.
 
-Min and max are often used as abbreviations for minimum and maximum and these are the terms used for the highest and lowest values in a vector. Bonus: The “range” of a set of numbers is the maximum minus the minimum.
+* Min and max are often used as abbreviations for minimum and maximum and these are the terms used for the highest and lowest values in a vector. Bonus: The “range” of a set of numbers is the maximum minus the minimum.
 
-The mean is the same thing that most people think of as the average. Bonus: The mean and the median are both measures of what statisticians call “central tendency.”
+* The mean is the same thing that most people think of as the average. Bonus: The mean and the median are both measures of what statisticians call “central tendency.”
 
-Chapter Challenge
+**Chapter Challenge**
 
 Create another variable containing information about family members (for example, each family member’s estimated IQ; you can make up the data). Take that new variable and put it in the existing myFamily dataframe. Rerun the summary() function on myFamily to get descriptive information on your new variable.
 
-Sources
-http://en.wikipedia.org/wiki/Central_tendency 
-http://en.wikipedia.org/wiki/Median 
-http://en.wikipedia.org/wiki/Relational_model 
-http://msenux.redwoods.edu/math/R/dataframe.php
-http://stat.ethz.ch/R-manual/R-devel/library/base/html/data.frame.html
-http://www.burns-stat.com/pages/Tutor/hints_R_begin.html 
-http://www.khanacademy.org/math/statistics/v/mean-median-and-mode 
+**Sources**
+[http://en.wikipedia.org/wiki/Central_tendency](http://en.wikipedia.org/wiki/Central_tendency)
+[http://en.wikipedia.org/wiki/Median](http://en.wikipedia.org/wiki/Median)
+[http://en.wikipedia.org/wiki/Relational_model](http://en.wikipedia.org/wiki/Relational_model)
+[http://msenux.redwoods.edu/math/R/dataframe.php](http://msenux.redwoods.edu/math/R/dataframe.php)
+[http://stat.ethz.ch/R-manual/R-devel/library/base/html/data.frame.html](http://stat.ethz.ch/R-manual/R-devel/library/base/html/data.frame.html)
+[http://www.burns-stat.com/pages/Tutor/hints_R_begin.html](http://www.burns-stat.com/pages/Tutor/hints_R_begin.html)
+[http://www.khanacademy.org/math/statistics/v/mean-median-and-mode](http://www.khanacademy.org/math/statistics/v/mean-median-and-mode)
 
 
-R Functions Used in This Chapter 
+**R Functions Used in This Chapter**
 
-c()			Concatenates data elements together
-<-			Assignment arrow
-data.frame()	Makes a dataframe from separate vectors
-str()			Reports the structure of a data object
-summary()	Reports data modes/types and a data overview
+`c()		Concatenates data elements together`
+`<-		Assignment arrow`
+`data.frame()	Makes a dataframe from separate vectors`
+`str()		Reports the structure of a data object`
+`summary()	Reports data modes/types and a data overview`
+
+## Chapter Six
+# Beer, Farms, and Peas
 
 The end of the 1800s and the early 1900s were a time of astonishing progress in mathematics and science. Given enough time, paper, and pencils, scientists and mathematicians of that age imagined that just about any problem facing humankind -  including the limitations of people themselves - could be measured, broken down, analyzed, and rebuilt to become more efficient. Four Englishmen who epitomized both this scientific progress and these idealistic beliefs were Francis Galton, Karl Pearson, William Sealy Gosset, and Ronald Fisher. 
 
@@ -491,17 +496,17 @@ One of the critical distinctions woven throughout the work of these four is betw
 
 We have already encountered several descriptive statistics in previous chapters, but for the sake of practice here they are again, this time with the more detailed definitions:
 
-The mean (technically the arithmetic mean), a measure of central tendency that is calculated by adding together all of the observations and dividing by the number of observations.
+* The mean (technically the arithmetic mean), a measure of central tendency that is calculated by adding together all of the observations and dividing by the number of observations.
 
-The median, another measure of central tendency, but one that cannot be directly calculated. Instead, you make a sorted list of all of the observations in the sample, then go halfway up that list. Whatever the value of the observation is at the halfway point, that is the median.
+* The median, another measure of central tendency, but one that cannot be directly calculated. Instead, you make a sorted list of all of the observations in the sample, then go halfway up that list. Whatever the value of the observation is at the halfway point, that is the median.
 
-The range, which is a measure of “dispersion” - how spread out a bunch of numbers in a sample are - calculated by subtracting the lowest value from the highest value.
+* The range, which is a measure of “dispersion” - how spread out a bunch of numbers in a sample are - calculated by subtracting the lowest value from the highest value.
 
 To this list we should add three more that you will run into in a variety of situations:
 
-The mode, another measure of central tendency. The mode is the value that occurs most often in a sample of data. Like the median, the mode cannot be directly calculated. You just have to count up how many of each number there are and then pick the category that has the most. 
+* The mode, another measure of central tendency. The mode is the value that occurs most often in a sample of data. Like the median, the mode cannot be directly calculated. You just have to count up how many of each number there are and then pick the category that has the most. 
 
-The variance, a measure of dispersion. Like the range, the variance describes how spread out a sample of numbers is. Unlike the range, though, which just uses two numbers to calculate dispersion, the variance is obtained from all of the numbers through a simple calculation that compares each number to the mean. If you remember the ages of the family members from the previous chapter and the mean age of 22, you will be able to make sense out of the following table:
+* The variance, a measure of dispersion. Like the range, the variance describes how spread out a sample of numbers is. Unlike the range, though, which just uses two numbers to calculate dispersion, the variance is obtained from all of the numbers through a simple calculation that compares each number to the mean. If you remember the ages of the family members from the previous chapter and the mean age of 22, you will be able to make sense out of the following table:
 
 This table shows the calculation of the variance, which begins by obtaining the “deviations” from the mean and then “squares” them (multiply each times itself) to take care of the negative deviations (for example, -14 from the mean for Bro). We add up all of the squared deviations and then divide by the number of observations to get a kind of “average squared deviation.” Note that it was not a mistake to divide by 4 instead of 5 - the reasons for this will become clear later in the book when we examine the concept of degrees of freedom. This result is the variance, a very useful mathematical concept that appears all over the place in statistics. While it is mathematically useful, it is not too nice too look at. For instance, in this example we are looking at the 356.5 squared-years of deviation from the mean. Who measures anything in squared years? Squared feet maybe, but that’s a different discussion. So, to address this weirdness, statisticians have also provided us with:
 
@@ -509,21 +514,21 @@ The standard deviation, another measure of dispersion, and a cousin to the varia
 
 Now let’s have R calculate some statistics for us:
 
-> var(myFamily$myFamilyAges)
-[1] 356.5 
-> sd(myFamily$myFamilyAges)
-[1] 18.88121
+`> var(myFamily$myFamilyAges)`
+`[1] 356.5`
+`> sd(myFamily$myFamilyAges)`
+`[1] 18.88121`
 
 Note that these commands carry on using the data used in the previous chapter, including the use of the $ to address variables within a dataframe. If you do not have the data from the previous chapter you can also do this:
 
-> var(c(43,42,12,8,5))
-[1] 356.5
-> sd(c(43,42,12,8,5))
-[1] 18.88121 
+`> var(c(43,42,12,8,5))`
+`[1] 356.5`
+`> sd(c(43,42,12,8,5))`
+`[1] 18.88121`
 
 This is a pretty boring example, though, and not very useful for the rest of the chapter, so here’s the next step up in looking at data. We will use the Windows or Mac clipboard to cut and paste a larger data set into R. Go to the U.S. Census website where they have stored population data:
 
-http://www.census.gov/popest/data/national/totals/2011/index.html
+[http://www.census.gov/popest/data/national/totals/2011/index.html](http://www.census.gov/popest/data/national/totals/2011/index.html)
 
 Assuming you have a spreadsheet program available, click on the XLS link for “Annual Estimates of the Resident Population for the United States.” When the spreadsheet is open, select the population estimates for the fifty states. The first few looked like this in the 2011 data:
 
@@ -534,16 +539,16 @@ Assuming you have a spreadsheet program available, click on the XLS link for “
 
 To make use of the next R command, make sure to choose just the numbers and not the text. Before you copy the numbers, take out the commas by switching the cell type to “General.” This can usually be accomplished under the Format menu, but you might also have a toolbar button to do the job. Copy the numbers to the clipboard with ctrl+C (Windows) or command+C (Mac). On a Windows machine use the following command:
 
-read.DIF("clipboard",transpose=TRUE)
+`read.DIF("clipboard",transpose=TRUE)`
 
 On a Mac, this command does the same thing:
-read.table(pipe("pbpaste"))
+`read.table(pipe("pbpaste"))`
 
 It is very annoying that there are two different commands for the two types of computers, but this is an inevitable side effect of the different ways that the designers at Microsoft and Apple set up the clipboard, plus the fact that R was designed to work across many platforms. Anyway, you should have found that the long string of population numbers appeared on the R output. The numbers are not much use to us just streamed to the output, so let’s assign the numbers to a new vector.
 
-Windows, using read.DIF:
-> USstatePops <- + read.DIF("clipboard",transpose=TRUE)
-> USstatePops
+`Windows, using read.DIF:`
+`> USstatePops <- + read.DIF("clipboard",transpose=TRUE)`
+`> USstatePops`
            V1
 1   4779736
 2    710231
@@ -551,8 +556,8 @@ Windows, using read.DIF:
 ...
 
 Or Mac, using read.table:
-> USstatePops <- read.table(pipe("pbpaste"))
-> USstatePops
+`> USstatePops <- read.table(pipe("pbpaste"))`
+`> USstatePops`
            V1
 1   4779736
 2    710231
@@ -565,26 +570,26 @@ Note that we have used the left pointing assignment arrow (“<-”) to take the
 
 Now we’re ready to have some fun with a good sized list of numbers. Here are the basic descriptive statistics on the population of the states:
 
-> mean(USstatePops$V1)
-[1] 6053834
-> median(USstatePops$V1)
-[1] 4339367
-> mode(USstatePops$V1)
-[1] "numeric"
-> var(USstatePops$V1)
-[1] 4.656676e+13
-> sd(USstatePops$V1)
-[1] 6823984
+`> mean(USstatePops$V1)`
+`[1] 6053834`
+`> median(USstatePops$V1)`
+`[1] 4339367`
+`> mode(USstatePops$V1)`
+`[1] "numeric"`
+`> var(USstatePops$V1)`
+`[1] 4.656676e+13`
+`> sd(USstatePops$V1)`
+`[1] 6823984`
 
 Some great summary information there, but wait, a couple things have gone awry:
 
-The mode() function has returned the data type of our vector of numbers instead of the statistical mode. This is weird but true: the basic R package does not have a statistical mode function! This is partly due to the fact that the mode is only useful in a very limited set of situations, but we will find out in later packages how add-on packages can be used to get new functions in R including one that calculates the statistical mode.
+* The mode() function has returned the data type of our vector of numbers instead of the statistical mode. This is weird but true: the basic R package does not have a statistical mode function! This is partly due to the fact that the mode is only useful in a very limited set of situations, but we will find out in later packages how add-on packages can be used to get new functions in R including one that calculates the statistical mode.
 
-The variance is reported as 4.656676e+13. This is the first time that we have seen the use of scientific notation in R. If you haven’t seen this notation before, the way you interpret it is to imagine 4.656676 multiplied by 10,000,000,000,000 (also known as 10 raised to the 13th power). You can see that this is ten trillion, a huge and unwieldy number, and that is why scientific notation is used. If you would prefer not to type all of that into a calculator, another trick to see what number you are dealing with is just to move the decimal point 13 digits to the right.
+* The variance is reported as 4.656676e+13. This is the first time that we have seen the use of scientific notation in R. If you haven’t seen this notation before, the way you interpret it is to imagine 4.656676 multiplied by 10,000,000,000,000 (also known as 10 raised to the 13th power). You can see that this is ten trillion, a huge and unwieldy number, and that is why scientific notation is used. If you would prefer not to type all of that into a calculator, another trick to see what number you are dealing with is just to move the decimal point 13 digits to the right.
 
 Other than these two issues, we now know that the average population of a U.S. state is 6,053,834 with a standard deviation of 6,823,984. You may be wondering, though, what does it mean to have a standard deviation of almost seven million?  The mean and standard deviation are OK, and they certainly are mighty precise, but for most of us, it would make much more sense to have a picture that shows the central tendency and the dispersion of a large set of numbers. So here we go. Run this command:
 
-hist(USstatePops$V1)
+`hist(USstatePops$V1)`
 
 Here’s the output you should get: 
 
@@ -596,7 +601,7 @@ On the other hand there is something unsatisfying about this diagram. With over 
 
 The answer is that the hist() function has an algorithm or recipe for deciding on the number of categories/bars to use by default. The number of observations and the spread of the data and the amount of empty space there would be are all taken into account. Fortunately it is possible and easy to ask R to use more or fewer categories/bars with the “breaks” parameter, like this:
 
-hist(USstatePops$V1, breaks=20)
+`hist(USstatePops$V1, breaks=20)`
 
 ￼This gives us five bars per tick mark or about two million for each bar. So the new histogram above shows very much the same pattern as before: 15 states with populations under two million. The pattern that you see here is referred to as a distribution. This is a distribution that starts off tall on the left and swoops downward quickly as it moves to the right. You might call this a “reverse-J” distribution because it looks a little like the shape a J makes, although flipped around vertically. More technically this could be referred to as a geometric distribution. We don’t have to worry about why it is called that at this stage, but we can speculate on why the distribution looks the way it does. First, you can’t have a state with no people in it, or worse yet negative population. It just doesn’t make any sense. So a state has to have at least a few people in it, and if you look through U.S. history every state began as a colony or a territory that had at least a few people in it. On the other hand, what does it take to grow really large in population? You need a lot of land, first of all, and then a good reason for lots of people to move there or lots of people to be born there. So there are lots of limits to growth: Rhode Island is too small too have a bazillion people in it and Alaska, although it has tons of land, is too cold for lots of people to want to move there. So all states probably started small and grew, but it is really difficult to grow really huge. As a result we have a distribution where most of the cases are clustered near the bottom of the scale and just a few push up higher and higher. But as you go higher, there are fewer and fewer states that can get that big, and by the time you are out at the end, just shy of 40 million people, there’s only one state that has managed to get that big. By the way, do you know or can you guess what that humongous state is? 
 
@@ -605,7 +610,7 @@ There are lots of other distribution shapes. The most common one that almost eve
 ￼
 If you are curious, you might be wondering how R generated the histogram above, and, if you are alert, you might notice that the histogram that appears above has the word “rnorm” in a couple of places. Here’s another of the cool features in R: it is incredibly easy to generate “fake” data to work with when solving problems or giving demonstrations. The data in this histogram were generated by R’s rnorm() function, which generates a random data set that fits the normal distribution (more closely if you generate a lot of data, less closely if you only have a little. Some further explanation of the rnorm() command will make sense if you remember that the state population data we were using had a mean of 6,053,834 and a standard deviation of 6,823,984. The command used to generate this histogram was:
 
-hist(rnorm(51, 6043834, 6823984))
+`hist(rnorm(51, 6043834, 6823984))`
 
 There are two very important new concepts introduced here. The first is a nested function call: The hist() function that generates the graph “surrounds” the rnorm() function that generates the new fake data. (Pay close attention to the parentheses!) The inside function, rnorm(), is run by R first, with the results of that sent directly and immediately into the hist() function.
 
@@ -615,51 +620,54 @@ The normal distribution is used extensively through applied statistics as a tool
 
 In the next chapter we will conduct some of these comparisons to see what we can infer about the ways things are in general, based on just a subset of available data, or what statisticians call a sample.
 
-Chapter Challenge
+**Chapter Challenge**
 
 In this chapter, we used rnorm() to generate random numbers that closely fit a normal distribution. We also learned that the state population data was a “geometric” distribution. Do some research to find out what R function generates random numbers using the geometric distribution. Then run that function with the correct parameters to generate 51 random numbers (hint: experiment with different probability values). Create a histogram of these random numbers and describe the shape of the distribution.
 
-Sources
-http://en.wikipedia.org/wiki/Carl_Friedrich_Gauss 
-http://en.wikipedia.org/wiki/Francis_Galton 
-http://en.wikipedia.org/wiki/Karl_Pearson 
-http://en.wikipedia.org/wiki/Ronald_Fisher 
-http://en.wikipedia.org/wiki/William_Sealy_Gosset 
-http://en.wikipedia.org/wiki/Normal_distribution 
-http://stat.ethz.ch/R-manual/R-devel/library/utils/html/read.table.html 
-http://www.census.gov/popest/data/national/totals/2011/index.html 
-http://www.r-tutor.com/elementary-statistics/numerical-measures/standard-deviation 
+**Sources**
+[http://en.wikipedia.org/wiki/Carl_Friedrich_Gauss](http://en.wikipedia.org/wiki/Carl_Friedrich_Gauss)
+[http://en.wikipedia.org/wiki/Francis_Galton](http://en.wikipedia.org/wiki/Francis_Galton)
+[http://en.wikipedia.org/wiki/Karl_Pearson](http://en.wikipedia.org/wiki/Karl_Pearson)
+[http://en.wikipedia.org/wiki/Ronald_Fisher](http://en.wikipedia.org/wiki/Ronald_Fisher)
+[http://en.wikipedia.org/wiki/William_Sealy_Gosset](http://en.wikipedia.org/wiki/William_Sealy_Gosset)
+[http://en.wikipedia.org/wiki/Normal_distribution](http://en.wikipedia.org/wiki/Normal_distribution)
+[http://stat.ethz.ch/R-manual/R-devel/library/utils/html/read.table.html](http://stat.ethz.ch/R-manual/R-devel/library/utils/html/read.table.html)
+[http://www.census.gov/popest/data/national/totals/2011/index.html](http://www.census.gov/popest/data/national/totals/2011/index.html)
+[http://www.r-tutor.com/elementary-statistics/numerical-measures/standard-deviation](http://www.r-tutor.com/elementary-statistics/numerical-measures/standard-deviation)
 
 
 
-Functions Used in This Chapter 
+**Functions Used in This Chapter **
 
-read.DIF()		Reads data in interchange format
-read.table()	Reads data table from external source
-mean()		Calculate arithmetic mean
-median()		Locate the median
-mode()		Tells the data type/mode of a data object
+`read.DIF()		Reads data in interchange format`
+`read.table()	Reads data table from external source`
+`mean()		Calculate arithmetic mean`
+`median()		Locate the median`
+`mode()		Tells the data type/mode of a data object`
 			Note: This is NOT the statistical mode
-var()			Calculate the sample variance
-sd()			Calculate the sample standard deviation
-hist()			Produces a histogram graphic
+`var()			Calculate the sample variance`
+`sd()			Calculate the sample standard deviation`
+`hist()			Produces a histogram graphic`
 
-Test Yourself
+**Test Yourself**
 
-If All Else Fails
+**If All Else Fails**
 
 In case you have difficulty with the read.DIF() or read.table() functions, the code shown below can be copied and pasted (or, in the worst case scenario, typed) into the R console to create the data set used in this chapter.
 
 
-V1 <- c(4779736,710231,6392017,2915918,37253956,
-5029196,3574097,897934,601723,18801310,9687653,
-1360301,1567582,12830632,6483802,3046355,2853118,4339367,4533372,1328361,5773552,6547629,9883640,
-5303925,2967297,5988927,989415,1826341,2700551,
-1316470,8791894,2059179,19378102,9535483,672591,
-11536504,3751351,3831074,12702379,1052567,
-4625364,814180,6346105,25145561,2763885,625741,
-8001024,6724540,1852994,5686986,563626)
-USstatePops <- data.frame(V1)
+`V1 <- c(4779736,710231,6392017,2915918,37253956,`
+`5029196,3574097,897934,601723,18801310,9687653,`
+`1360301,1567582,12830632,6483802,3046355,2853118,4339367,4533372,1328361,5773552,6547629,9883640,`
+`5303925,2967297,5988927,989415,1826341,2700551,`
+`1316470,8791894,2059179,19378102,9535483,672591,`
+`11536504,3751351,3831074,12702379,1052567,`
+`4625364,814180,6346105,25145561,2763885,625741,`
+`8001024,6724540,1852994,5686986,563626)`
+`USstatePops <- data.frame(V1)`
+
+## Chapter 7
+# Sample in a Jar
 
 Imagine a gum ball jar full of gumballs of two different colors, red and blue. The jar was filled from a source that provided 100 red gum balls and 100 blue gum balls, but when these were poured into the jar they got all mixed up. If you drew eight gumballs from the jar at random, what colors would you get? If things worked out perfectly, which they never do, you would get four red and four blue. This is half and half, the same ratio of red and blue that is in the jar as a whole. Of course, it rarely works out this way, does it? Instead of getting four red and four blue you might get three red and five blue or any other mix you can think of. In fact, it would be possible, though perhaps not likely, to get eight red gumballs. The basic situation, though, is that we really don’t know what mix of red and blue we will get with one draw of eight gumballs. That’s uncertainty for you, the forces of randomness affecting our sample of eight gumballs in unpredictable ways.
 
