@@ -679,36 +679,36 @@ This process of repeatedly drawing a subset from a “population”  is called �
 
 Conveniently, R has a function called sample(), that will draw a random sample from a data set with just a single call. We can try it now with our state data:
 
-> sample(USstatePops$V1,size=16,replace=TRUE)
-[1] 4533372 19378102 897934 1052567 672591 18801310  2967297
-[8]  5029196
+`> sample(USstatePops$V1,size=16,replace=TRUE)`
+`[1] 4533372 19378102 897934 1052567 672591 18801310  2967297`
+`[8]  5029196`
 
 As a matter of practice, note that we called the sample() function with three arguments. The first argument was the data source. For the second and third arguments, rather than rely on the order in which we specify the arguments, we have used “named arguments” to make sure that R does what we wanted. The size=16 argument asks R to draw a sample of 16 state data values. The replace=TRUE argument specifies a style of sampling which statisticians use very often to simplify the mathematics of their proofs. For us, sampling with or without replacement does not usually have any practical effects, so we will just go with what the statisticians typically do.
 
 When we’re working with numbers such as these state values, instead of counting gumball colors, we’re more interested in finding out the average, or what you now know as the mean. So we could also ask R to calculate a mean() of the sample for us:
 
-> mean(sample(USstatePops$V1,size=16, +
-replace=TRUE))
-[1] 8198359
+`> mean(sample(USstatePops$V1,size=16, +`
+`replace=TRUE))`
+`[1] 8198359`
 
 There’s the nested function call again. The output no longer shows the eight values that R sampled from the list of 51. Instead it used those eight values to calculate the mean and display that for us. If you have a good memory, or merely took the time to look in the last chapter, you will remember that the actual mean of our 51 observations is 6,053,834. So the mean that we got from this one sample of eight states is really not even close to the true mean value of our 51 observations. Are we worried? Definitely not! We know that when we draw a sample, whether it is gumballs or states, we will never hit the true population mean right on the head. We’re interested not in any one sample, but in what happens over the long haul. So now we’ve got to get R to repeat this process for us, not once, not four times, but four hundred times or four thousand times. Like most programming languages, R has a variety of ways of repeating an activity. One of the easiest ones to use is the replicate() function. To start, let’s just try four replications:
 
-> replicate(4, mean(sample(USstatePops$V1,+ size=16,replace=TRUE)),simplify=TRUE)
-[1] 10300486 11909337  8536523  5798488
+`> replicate(4, mean(sample(USstatePops$V1,+ size=16,replace=TRUE)),simplify=TRUE)`
+`[1] 10300486 11909337  8536523  5798488`
 
 Couldn’t be any easier. We took the exact same command as before, which was a nested function to calculate the mean() of a random sample of eight states (shown above in bold). This time, we put that command inside the replicate() function so we could run it over and over again. The simplify=TRUE argument asks R to return the results as a simple vector of means, perfect for what we are trying to do. We only ran it four times, so that we would not have a big screen full of numbers. From here, though, it is easy to ramp up to repeating the process four hundred times. You can try that and see the output, but for here in the book we will encapsulate the whole replicate function inside another mean(), so that we can get the average of all 400 of the sample means. Here we go:
 
-> mean(replicate(400, mean( + 
-sample(USstatePops$V1,size=16,replace=TRUE)),+
-simplify=TRUE))
-[1] 5958336
+`> mean(replicate(400, mean( +`
+`sample(USstatePops$V1,size=16,replace=TRUE)),+`
+`simplify=TRUE))`
+`[1] 5958336`
 
 In the command above, the outermost mean() command is bolded to show what is different from the previous command. So, put into words, this deeply nested command accomplishes the following: a)  Draw 400 samples of size n=8 from our full data set of 51 states; b) Calculate the mean from each sample and keep it in a list; c) When finished with the list of 400 of these means, calculate the mean of that list of means. You can see that the mean of four hundred sample means is 5,958,336. Now that is still not the exact value of the whole data set, but it is getting close. We’re off by about 95,000, which is roughly an error of about 1.6% (more precisely, 95,498/6,053,834 = 1.58%. You may have also noticed that it took a little while to run that command, even if you have a fast computer. There’s a lot of work going on there! Let’s push it a bit further and see if we can get closer to the true mean for all of our data:
 
-> mean(replicate(4000, mean( +
-sample(USstatePops$V1,size=16,replace=TRUE)),+
-simplify=TRUE))
-[1] 6000972
+`> mean(replicate(4000, mean( +`
+`sample(USstatePops$V1,size=16,replace=TRUE)),+`
+`simplify=TRUE))`
+`[1] 6000972`
 
 Now we are even closer! We are now less than 1% away from the true population mean value. Note that the results you get may be a bit different, because when you run the commands, each of the 400 or 4000 samples that is drawn will be slightly different than the ones that were drawn for the commands above. What will not be much different is the overall level of accuracy. 
 
@@ -718,48 +718,47 @@ The histogram displays the complete list of 4000 means as frequencies. Take a cl
 
 ￼By the way, were you able to figure out the command to generate this histogram on your own? All you had to do was substitute hist() for the outermost mean() in the previous command. In case you struggled, here it is:
 
-hist(replicate(4000, mean( +
-sample(USstatePops$V1,size=16,replace=TRUE)), +
-simplify=TRUE))
+`hist(replicate(4000, mean( +`
+`sample(USstatePops$V1,size=16,replace=TRUE)), +`
+`simplify=TRUE))`
 
-This is a great moment to take a deep breath. We’ve just covered a couple hundred years of statistical thinking in just a few pages. In fact, there are two big ideas, “the law of large numbers” and 
-the central limit theorem” that we have just partially demonstrated. These two ideas literally took mathematicians like Gerolamo Cardano (1501-1576) and Jacob Bernoulli (1654-1705) several centuries to figure out. If you look these ideas up, you may find a lot of bewildering mathematical details, but for our purposes, there are two really important take-away messages. First, if you run a statistical process a large number of times, it will converge on a stable result. For us, we knew what the average population was of the 50 states plus the District of Columbia. These 51 observations were our population, and we wanted to know how many smaller subsets, or samples, of size n=16 we would have to draw before we could get a good approximation of that true value. We learned that drawing one sample provided a poor result. Drawing 400 samples gave us a mean that was off by 1.5%. Drawing 4000 samples gave us a mean that was off by less than 1%. If we had kept going to 40,000 or 400,000 repetitions of our sampling process, we would have come extremely close to the actual average of 6,053,384. 
+This is a great moment to take a deep breath. We’ve just covered a couple hundred years of statistical thinking in just a few pages. In fact, there are two big ideas, “the law of large numbers” and the central limit theorem” that we have just partially demonstrated. These two ideas literally took mathematicians like Gerolamo Cardano (1501-1576) and Jacob Bernoulli (1654-1705) several centuries to figure out. If you look these ideas up, you may find a lot of bewildering mathematical details, but for our purposes, there are two really important take-away messages. First, if you run a statistical process a large number of times, it will converge on a stable result. For us, we knew what the average population was of the 50 states plus the District of Columbia. These 51 observations were our population, and we wanted to know how many smaller subsets, or samples, of size n=16 we would have to draw before we could get a good approximation of that true value. We learned that drawing one sample provided a poor result. Drawing 400 samples gave us a mean that was off by 1.5%. Drawing 4000 samples gave us a mean that was off by less than 1%. If we had kept going to 40,000 or 400,000 repetitions of our sampling process, we would have come extremely close to the actual average of 6,053,384. 
 
 Second, when we are looking at sample means, and we take the law of large numbers into account, we find that the distribution of sampling means starts to create a bell-shaped or normal distribution, and the center of that distribution, the mean of all of those sample means gets really close to the actual population mean. It gets closer faster for larger samples, and in contrast, for smaller samples you have to draw lots and lots of them to get really close. Just for fun, lets illustrate this with a sample size that is larger than 16. Here’s a run that only repeats 100 times, but each time draws a sample of n=51 (equal in size to the population):
 
-> mean(replicate(100, mean( + 
-sample(USstatePops$V1,size=51,replace=TRUE)),+
-simplify=TRUE))
-[1] 6114231
+`> mean(replicate(100, mean( +`
+`sample(USstatePops$V1,size=51,replace=TRUE)),+`
+`simplify=TRUE))`
+`[1] 6114231`
 
 Now, we’re only off from the true value of the population mean by about one tenth of one percent. You might be scratching your head now, saying, “Wait a minute, isn’t a sample of 51 the same thing as the whole list of 51 observations?” This is confusing, but it goes back to the question of sampling with replacement that we examined a couple of pages ago (and that appears in the command above as replace=TRUE). Sampling with replacement means that as you draw out one value to include in your random sample, you immediately chuck it back into the list so that, potentially, it could get drawn again either immediately or later. As mentioned before, this practice simplifies the underlying proofs, and it does not cause any practical problems, other than head scratching. In fact, we could go even higher in our sample size with no trouble:
 
-> mean(replicate(100, mean( +
-sample(USstatePops$V1,size=120,replace=TRUE)), +
-simplify=TRUE))
-[1] 6054718
+`> mean(replicate(100, mean( +`
+`sample(USstatePops$V1,size=120,replace=TRUE)), +`
+`simplify=TRUE))`
+`[1] 6054718`
 
 That command runs 100 replications using samples of size n=120. Look how close the mean of the sampling distribution is to the population mean now! Remember that this result will change a little bit every time you run the procedure, because different random samples are being drawn for each run. But the rule of thumb is that the bigger your sample size, what statisticians call n, the closer your estimate will be to the true value. Likewise, the more trials you run, the closer your population estimate will be. 
 
 So, if you’ve had a chance to catch your breath, let’s move on to making use of the sampling distribution. First, let’s save one distribution of sample means so that we have a fixed set of numbers to work with:
 
-SampleMeans <- replicate(10000, + mean(sample(USstatePops$V1,size=120,+
-replace=TRUE)),simplify=TRUE)
+`SampleMeans <- replicate(10000, + mean(sample(USstatePops$V1,size=120,+`
+`replace=TRUE)),simplify=TRUE)`
 
-The bolded part is new. We’re saving a distribution of sample means to a new vector called “SampleMeans”. We should have 10,000 of them:
+The SampleMeans function is new. We’re saving a distribution of sample means to a new vector called “SampleMeans”. We should have 10,000 of them:
 
-> length(SampleMeans)
-[1] 10000
+`> length(SampleMeans)`
+`[1] 10000`
 
 And the mean of all of these means should be pretty close to our population mean of 6,053,384:
 
-> mean(SampleMeans)
-[1] 6058718
+`> mean(SampleMeans)`
+`[1] 6058718`
 
 You might also want to run a histogram on SampleMeans and see what the frequency distribution looks like. Right now, all we need to look at is a summary of the list of sample means:
 
-> summary(SampleMeans)
-   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+`> summary(SampleMeans)`
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.
 3943000 5632000 6029000 6059000 6457000 9091000 
 
 If you need a refresher on the median and quartiles, take a look back at Chapter 3 - Rows and Columns. 
@@ -770,14 +769,14 @@ At 6,029,000 the median is quite close to the mean, but not exactly the same bec
 
 There is a slightly different way of getting the same information from R that will prove more flexible for us in the long run. The quantile() function can show us the same information as the median and the quartiles, like this:
 
- > quantile(SampleMeans, probs=c(0.25,0.50,0.75))
+ `> quantile(SampleMeans, probs=c(0.25,0.50,0.75))`
     25%     50%     75% 
 
 5631624 6028665 6457388
 
 You will notice that the values are just slightly different, by less than one tenth of one percent, than those produced by the summary() function. These are actually more precise, although the less precise ones from summary() are fine for most purposes. One reason to use quantile() is that it lets us control exactly where we make the cuts. To get quartiles, we cut at 25% (0.25 in the command just above), at 50%, and at 75%. But what if we wanted instead to cut at 5% and 95%? Easy to do with quantile():
 
-> quantile(SampleMeans, probs=c(0.05,0.95))
+`> quantile(SampleMeans, probs=c(0.05,0.95))`
      5%     95% 
 5085394 7111750 
 
@@ -793,10 +792,10 @@ Now let’s put this knowledge to work. Here is a sample of the number of people
 
 We can easily get these into R and calculate the sample mean:
 
-> MysterySample <- c(3706690, 159358, 106405, +
-   55519, 53883)
-> mean(MysterySample)
-[1] 816371
+`> MysterySample <- c(3706690, 159358, 106405, +
+   55519, 53883)`
+`> mean(MysterySample)`
+`[1] 816371`
 
 The mean of our mystery sample is 816,371. The question is, is this a sample of U.S. states or is it something else? Just on its own it would be hard to tell. The first observation in our sample has more people in it than Kansas, Utah, Nebraska, and several other states. We also know from looking at the distribution of raw population data from our previous example that there are many, many states that are quite small in the number of people. Thanks to the work we’ve done earlier in this chapter, however, we have an excellent basis for comparison. We have the sampling distribution of means, and it is fair to say that if we get a new mean to look at, and the new mean is way out in the extreme areas of the sample distribution, say, below the 5% mark or above the 95% mark, then it seems much less likely that our MysterySample is a sample of states. 
 
@@ -804,7 +803,7 @@ In this case, we can see quite clearly that 816,371 is on the extreme low end of
 
 In fact, we could even play around with a more stringent criterion:
 
-> quantile(SampleMeans, probs=c(0.01,0.99))
+`> quantile(SampleMeans, probs=c(0.01,0.99))`
      1%     99% 
 4739252 7630622
 
@@ -818,67 +817,70 @@ If you feel a bit confused, take heart. There’s 400-500 years of mathematical 
 
 First, we looked at the mean of the sampling distribution with mean() and we looked at its shaped with hist(), but we never quantified the spread of the distribution:
 
-> sd(SampleMeans)
-[1] 621088.1
+`> sd(SampleMeans)`
+`[1] 621088.1`
 
 This shows us the standard deviation of the distribution of sampling means. Statisticians call this the “standard error of the mean.” This chewy phrase would have been clearer, although longer, if it had been something like this: “the standard deviation of the distribution of sample means for samples drawn from a population.” Unfortunately, statisticians are not known for giving things clear labels. Suffice to say that when we are looking at a distribution and each data point in that distribution is itself a representation of a sample (for example, a mean), then the standard deviation is referred to as the standard error. 
 
 Second, there is a shortcut to finding out the standard error that does not require actually constructing an empirical distribution of 10,000 (or any other number) of sampling means. It turns out that the standard deviation of the original raw data and the standard error are closely related by a simple bit of algebra:
 
-> sd(USstatePops$V1)/sqrt(120)
-[1] 622941.7
+`> sd(USstatePops$V1)/sqrt(120)`
+`[1] 622941.7`
 
 The formula in this command takes the standard deviation of the original state data and divides it by the square root of the sample size. Remember three of four pages ago when we created the SampleMeans vector by using the replicate() and sample() commands, that we used a sample size of n=120. That’s what you see in the formula above, inside of the sqrt() function. In R, and other software sqrt() is the abbreviation for “square root” and not for “squirt” as you might expect. So if you have a set of observations and you calculate their standard deviation, you can also calculate the standard error for a distribution of means (each of which has the same sample size), just by dividing by the square root of the sample size. You may notice that the number we got with the shortcut was slightly larger than the number that came from the distribution itself, but the difference is not meaningful (and only arrises because of randomness in the distribution). Another thing you may have noticed is that the larger the sample size, the smaller the standard error. This leads to an important rule for working with samples: the bigger the better.
 
 The last thing is another shortcut. We found out the 5% cut point and the 95% cut point by constructing the sampling distribution and then using quantile to tell us the actual cuts. You can also find those cut points just using the mean and the standard error. Two standard errors down from the mean is the 5% cut point and two standard errors up from the mean is the 95% cut point.
 
-> StdError<-sd(USstatePops$V1)/sqrt(120)
-> CutPoint5<-mean(USstatePops$V1)-(2 * StdError)
-> CutPoint95<-mean(USstatePops$V1)+(2 * StdError)
-> CutPoint5
-[1] 4807951
-> CutPoint95
-[1] 7299717
+`> StdError<-sd(USstatePops$V1)/sqrt(120)`
+`> CutPoint5<-mean(USstatePops$V1)-(2 * StdError)`
+`> CutPoint95<-mean(USstatePops$V1)+(2 * StdError)`
+`> CutPoint5`
+`[1] 4807951`
+`> CutPoint95`
+`[1] 7299717`
 
 You will notice again that these are slightly different from what we calculated with the quantile() function using the empirical distribution. The differences arise because of the randomness in the distribution that we constructed. We could easily reduce those discrepancies by using a larger sample size and by having more replications included in the sampling distribution.
 
 To summarize, with a data set that includes 51 data points with the numbers of people in states, and a bit of work using R to construct a distribution of sampling means, we have learned the following:
 
-Run a statistical process a large number of times and you get a consistent pattern of results.
+* Run a statistical process a large number of times and you get a consistent pattern of results.
 
-Taking the means of a large number of samples and plotting them on a histogram shows that the sample means are fairly well normally distributed and that the center of the distribution is very, very close to the mean of the original raw data.
+* Taking the means of a large number of samples and plotting them on a histogram shows that the sample means are fairly well normally distributed and that the center of the distribution is very, very close to the mean of the original raw data.
 
-This resulting distribution of sample means can be used as a basis for comparisons. By making cut points at the extreme low and high ends of the distribution, for example 5% and 95%, we have a way of comparing any new information we get.
+* This resulting distribution of sample means can be used as a basis for comparisons. By making cut points at the extreme low and high ends of the distribution, for example 5% and 95%, we have a way of comparing any new information we get.
 
-If we get a new sample mean, and we find that it is in the extreme zone defined by our cut points, we can tentatively conclude that the sample that made that mean is a different kind of thing than the samples that made the sampling distribution.
+* If we get a new sample mean, and we find that it is in the extreme zone defined by our cut points, we can tentatively conclude that the sample that made that mean is a different kind of thing than the samples that made the sampling distribution.
 
-A shortcut and more accurate way of figuring the cut points involves calculating the “standard error” based on the standard deviation of the original raw data.
+* A shortcut and more accurate way of figuring the cut points involves calculating the “standard error” based on the standard deviation of the original raw data.
 
 We’re not statisticians at this point, but the process of reasoning based on sampling distributions is at the heart of inferential statistics, so if you have followed the logic presented in this chapter, you have made excellent progress towards being a competent user of applied statistics.
 
 
-Chapter Challenge
+**Chapter Challenge**
 
 Collect a sample consisting of at least 20 data points and construct a sampling distribution. Calculate the standard error and use this to calculate the 5% and 95% distribution cut points. The data points you collect should represent instances of the same phenomenon. For instance, you could collect the prices of 20 textbooks, or count the number of words in each of 20 paragraphs.
 
-Sources
-http://en.wikipedia.org/wiki/Central_limit_theorem 
-http://en.wikipedia.org/wiki/Gerolamo_Cardano 
-http://en.wikipedia.org/wiki/Jacob_Bernoulli 
-http://en.wikipedia.org/wiki/Law_of_large_numbers
-http://en.wikipedia.org/wiki/List_of_U.S._states_and_territories_by_population 
-http://www.khanacademy.org/math/statistics/v/central-limit-theorem 
+**Sources**
+[http://en.wikipedia.org/wiki/Central_limit_theorem](http://en.wikipedia.org/wiki/Central_limit_theorem)
+[http://en.wikipedia.org/wiki/Gerolamo_Cardano](http://en.wikipedia.org/wiki/Gerolamo_Cardano)
+[http://en.wikipedia.org/wiki/Jacob_Bernoulli](http://en.wikipedia.org/wiki/Jacob_Bernoulli)
+[http://en.wikipedia.org/wiki/Law_of_large_numbers](http://en.wikipedia.org/wiki/Law_of_large_numbers)
+[http://en.wikipedia.org/wiki/](http://en.wikipedia.org/wiki/)[List_of_U.S._states_and_territories_by_population](List_of_U.S._states_and_territories_by_population)
+[http://www.khanacademy.org/math/statistics/v/central-limit-theorem](http://www.khanacademy.org/math/statistics/v/central-limit-theorem)
 
-R Commands Used in This Chapter
+**R Commands Used in This Chapter**
 
-length() - The number of elements in a vector
-mean() - The arithmetic mean or average of a set of values
-quantile() - Calculates cut points based on percents/proportions
-replicate() - Runs an expression/calculation many times
-sample() - Chooses elements at random from a vector
-sd() - Calculates standard deviation
-sqrt() - Calculates square root
-summary() - Summarizes contents of a vector
+`length() - The number of elements in a vector`
+`mean() - The arithmetic mean or average of a set of values`
+`quantile() - Calculates cut points based on percents/proportions`
+`replicate() - Runs an expression/calculation many times`
+`sample() - Chooses elements at random from a vector`
+`sd() - Calculates standard deviation`
+`sqrt() - Calculates square root`
+`summary() - Summarizes contents of a vector`
+
+## Chapter 8
+# Big Data? Big Deal!
 
 MarketWatch (a Wall Street Journal Service) recently published an article with the title, “Big Data Equals Big Business Opportunity Say Global IT and Business Professionals,” and the subtitle, “70 Percent of Organizations Now Considering, Planning or Running Big Data Projects According to New Global Survey.” The technology news has been full of similar articles for several years. Given the number of such articles it is hard to resist the idea that “big data” represents some kind of revolution that has turned the whole world of information and technology topsy-turvy. But is this really true? Does “big data” change everything?
 
