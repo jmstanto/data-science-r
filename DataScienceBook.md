@@ -920,7 +920,9 @@ Putting this altogether, we can take a sensible position that **high quality** d
 
 **Sources**
 [http://aqua.nasa.gov/doc/pubs/Wx_Forecasting.pdf](http://aqua.nasa.gov/doc/pubs/Wx_Forecasting.pdf)
+
 [http://en.wikipedia.org/wiki/Big_data](http://en.wikipedia.org/wiki/Big_data)
+
 [http://www.marketwatch.com/story/big-data-equals-big-business-opportunity-say-global-it-and-business-professionals-2012-05-14](http://www.marketwatch.com/story/big-data-equals-big-business-opportunity-say-global-it-and-business-professionals-2012-05-14)
 
 ## Chapter 9
