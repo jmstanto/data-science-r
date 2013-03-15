@@ -67,14 +67,23 @@ Obviously if you are reading this book you probably have access to an iBook read
 One last thing: The book presents topics in an order that should work well for people with little or no experience in computer science or statistics. If you already have knowledge, training, or experience in one or both of these areas, you should feel free to skip over some of the introductory material and move right into the topics and chapters that interest you most. There’s something here for everyone and, after all, you can’t beat the price!
 
 **Sources**
+
 [http://en.wikipedia.org/wiki/E-Science](http://en.wikipedia.org/wiki/E-Science)
-[http://en.wikipedia.org/wiki/E-Science_librarianship](http://en.wikipedia.org/wiki/E-Science_librarianship) 
-[http://en.wikipedia.org/wiki/Wikipedia:Size_comparisons](http://en.wikipedia.org/wiki/Wikipedia:Size_comparisons) 
+
+[http://en.wikipedia.org/wiki/E-Science_librarianship](http://en.wikipedia.org/wiki/E-Science_librarianship)
+
+[http://en.wikipedia.org/wiki/Wikipedia:Size_comparisons](http://en.wikipedia.org/wiki/Wikipedia:Size_comparisons)
+
 [http://en.wikipedia.org/wiki/Statistician](http://en.wikipedia.org/wiki/Statistician)
+
 [http://en.wikipedia.org/wiki/Visualization_(computer_graphics)](http://en.wikipedia.org/wiki/Visualization_(computer_graphics))
+
 [http://www.khanacademy.org/](http://www.khanacademy.org/)
+
 [http://www.r-project.org/](http://www.r-project.org/)
+
 [http://www.readwriteweb.com/hack/2011/09/unlocking-big-data-with-r.php](http://www.readwriteweb.com/hack/2011/09/unlocking-big-data-with-r.php)
+
 [http://rstudio.org/](http://rstudio.org/)
 
 ## Chapter 1
@@ -140,11 +149,17 @@ We have just created our first “data set.” It is very small, for sure, only 
 *Discover the meaning of “Boolean Logic” and the rules for “and”, “or”, “not”, and “exclusive or”. Once you have studied this for a whole, write down on a piece of paper, without looking, all of the binary operations that demonstrate these rules.*
 
 **Sources**
+
 [http://en.wikipedia.org/wiki/Claude_Shannon](http://en.wikipedia.org/wiki/Claude_Shannon)
+
 [http://en.wikipedia.org/wiki/Information_theory](http://en.wikipedia.org/wiki/Information_theory)
+
 [http://cran.r-project.org/doc/manuals/R-intro.pdf](http://cran.r-project.org/doc/manuals/R-intro.pdf)
+
 [http://www.khanacademy.org/math/vi-hart/v/binary-hand-dance](http://www.khanacademy.org/math/vi-hart/v/binary-hand-dance)
+
 [http://www.khanacademy.org/science/computer-science/v/introduction-to-programs-data-types-and-variables](http://www.khanacademy.org/science/computer-science/v/introduction-to-programs-data-types-and-variables)
+
 [http://www.asciitable.com/](http://www.asciitable.com/) 
 
 
@@ -229,13 +244,21 @@ In the next chapter we will move forward a step or two by starting to work with 
 Using logic and online resources to get help if you need it, learn how to use the c() function to add another family member’s age on the end of the myFamilyAges vector.
 
 **Sources**
+
 [http://a-little-book-of-r-for-biomedical-statistics.readthedocs.org/en/latest/src/installr.html](http://a-little-book-of-r-for-biomedical-statistics.readthedocs.org/en/latest/src/installr.html)
+
 [http://cran.r-project.org/](http://cran.r-project.org/)
+
 [http://dssm.unipa.it/R-php/R-php-1/R/ (UNIPA experimental web interface to R)](http://dssm.unipa.it/R-php/R-php-1/R/)
-[http://en.wikibooks.org/wiki/R_Programming](http://en.wikibooks.org/wiki/R_Programming) 
+
+[http://en.wikibooks.org/wiki/R_Programming](http://en.wikibooks.org/wiki/R_Programming)
+
 [https://plus.google.com/u/0/104922476697914343874/posts (Jeremy Taylor’s blog: Stats Make Me Cry)](https://plus.google.com/u/0/104922476697914343874/posts)
+
 [http://stackoverflow.com](http://stackoverflow.com)
+
 [https://stat.ethz.ch](https://stat.ethz.ch)
+
 [http://www.statmethods.net/](http://www.statmethods.net/)
 
 **Test Yourself**
@@ -279,7 +302,9 @@ In an application area like health care, there are so many choices for different
 Whatever the goal, the data scientist has an important and difficult challenge of taking the methods of today - including paper forms and manual data entry - and imagining the methods of tomorrow. Follow the data!
 
 **Sources**
+
 [http://en.wikipedia.org/wiki/Data_modeling](http://en.wikipedia.org/wiki/Data_modeling)
+
 [http://en.wikipedia.org/wiki/Entity-relationship_diagram](http://en.wikipedia.org/wiki/Entity-relationship_diagram)
 
 ## Chapter 5
@@ -382,6 +407,7 @@ Putting it altogether, we have pretty complete information about the myFamily da
 
 Next, we will examine another very useful function called summary(). Summary() provides some overlapping information to str() but also goes a little bit further, particularly with numeric variables. Here’s what we get:
 
+<pre>
 > summary(myFamily)
  myFamilyNames  myFamilyAges
  Bro: 1			Min.	: 5
@@ -397,6 +423,7 @@ myFamilyGenders myFamilyWeights
 				Mean	: 102.4
 				3rd Qu.	: 136.0
 				Max		: 188.0		
+</pre>
 
 In order to fit on the page properly, these columns have been reorganized a bit. The name of a column/variable, sits up above the information that pertains to it, and each block of information is independent of the others (so it is meaningless, for instance, that “Bro: 1” and “Min.” happen to be on the same line of output). Notice, as with str(), that the output is quite different depending upon whether we are talking about a Factor, like myFamilyNames or myFamilyGenders, versus a numeric variable like myFamilyAges and myFamilyWeights. The columns for the Factors list out a few of the Factor names along with the number of occurrences of cases that  are coded with that factor. So for instance, under myFamilyGenders it shows three females and two males. In contrast, for the numeric variables we get five different calculated quantities that help to summarize the variable. There’s no time like the present to start to learn about what these are, so here goes:
 
@@ -460,12 +487,19 @@ So what new skills and knowledge do we have at this point? Here are a few of the
 Create another variable containing information about family members (for example, each family member’s estimated IQ; you can make up the data). Take that new variable and put it in the existing myFamily dataframe. Rerun the summary() function on myFamily to get descriptive information on your new variable.
 
 **Sources**
+
 [http://en.wikipedia.org/wiki/Central_tendency](http://en.wikipedia.org/wiki/Central_tendency)
+
 [http://en.wikipedia.org/wiki/Median](http://en.wikipedia.org/wiki/Median)
+
 [http://en.wikipedia.org/wiki/Relational_model](http://en.wikipedia.org/wiki/Relational_model)
+
 [http://msenux.redwoods.edu/math/R/dataframe.php](http://msenux.redwoods.edu/math/R/dataframe.php)
+
 [http://stat.ethz.ch/R-manual/R-devel/library/base/html/data.frame.html](http://stat.ethz.ch/R-manual/R-devel/library/base/html/data.frame.html)
+
 [http://www.burns-stat.com/pages/Tutor/hints_R_begin.html](http://www.burns-stat.com/pages/Tutor/hints_R_begin.html)
+
 [http://www.khanacademy.org/math/statistics/v/mean-median-and-mode](http://www.khanacademy.org/math/statistics/v/mean-median-and-mode)
 
 
@@ -625,14 +659,23 @@ In the next chapter we will conduct some of these comparisons to see what we can
 In this chapter, we used rnorm() to generate random numbers that closely fit a normal distribution. We also learned that the state population data was a “geometric” distribution. Do some research to find out what R function generates random numbers using the geometric distribution. Then run that function with the correct parameters to generate 51 random numbers (hint: experiment with different probability values). Create a histogram of these random numbers and describe the shape of the distribution.
 
 **Sources**
+
 [http://en.wikipedia.org/wiki/Carl_Friedrich_Gauss](http://en.wikipedia.org/wiki/Carl_Friedrich_Gauss)
+
 [http://en.wikipedia.org/wiki/Francis_Galton](http://en.wikipedia.org/wiki/Francis_Galton)
+
 [http://en.wikipedia.org/wiki/Karl_Pearson](http://en.wikipedia.org/wiki/Karl_Pearson)
+
 [http://en.wikipedia.org/wiki/Ronald_Fisher](http://en.wikipedia.org/wiki/Ronald_Fisher)
+
 [http://en.wikipedia.org/wiki/William_Sealy_Gosset](http://en.wikipedia.org/wiki/William_Sealy_Gosset)
+
 [http://en.wikipedia.org/wiki/Normal_distribution](http://en.wikipedia.org/wiki/Normal_distribution)
+
 [http://stat.ethz.ch/R-manual/R-devel/library/utils/html/read.table.html](http://stat.ethz.ch/R-manual/R-devel/library/utils/html/read.table.html)
+
 [http://www.census.gov/popest/data/national/totals/2011/index.html](http://www.census.gov/popest/data/national/totals/2011/index.html)
+
 [http://www.r-tutor.com/elementary-statistics/numerical-measures/standard-deviation](http://www.r-tutor.com/elementary-statistics/numerical-measures/standard-deviation)
 
 
@@ -861,11 +904,17 @@ We’re not statisticians at this point, but the process of reasoning based on s
 Collect a sample consisting of at least 20 data points and construct a sampling distribution. Calculate the standard error and use this to calculate the 5% and 95% distribution cut points. The data points you collect should represent instances of the same phenomenon. For instance, you could collect the prices of 20 textbooks, or count the number of words in each of 20 paragraphs.
 
 **Sources**
+
 [http://en.wikipedia.org/wiki/Central_limit_theorem](http://en.wikipedia.org/wiki/Central_limit_theorem)
+
 [http://en.wikipedia.org/wiki/Gerolamo_Cardano](http://en.wikipedia.org/wiki/Gerolamo_Cardano)
+
 [http://en.wikipedia.org/wiki/Jacob_Bernoulli](http://en.wikipedia.org/wiki/Jacob_Bernoulli)
+
 [http://en.wikipedia.org/wiki/Law_of_large_numbers](http://en.wikipedia.org/wiki/Law_of_large_numbers)
+
 [http://en.wikipedia.org/wiki/](http://en.wikipedia.org/wiki/)[List_of_U.S._states_and_territories_by_population](List_of_U.S._states_and_territories_by_population)
+
 [http://www.khanacademy.org/math/statistics/v/central-limit-theorem](http://www.khanacademy.org/math/statistics/v/central-limit-theorem)
 
 **R Commands Used in This Chapter**
@@ -919,6 +968,7 @@ The third caution is about linking data sets. Item C above suggests that linkage
 Putting this altogether, we can take a sensible position that **high quality** data, in abundance, together with tools used by intelligent analysts, may provide worthwhile benefits in the commercial sector, in education, in government, and in other areas. The focus of our efforts as data scientists, however, should not be on achieving the largest possible data sets, but rather on getting the right data and the right amount of data for the purpose we intend. 
 
 **Sources**
+
 [http://aqua.nasa.gov/doc/pubs/Wx_Forecasting.pdf](http://aqua.nasa.gov/doc/pubs/Wx_Forecasting.pdf)
 
 [http://en.wikipedia.org/wiki/Big_data](http://en.wikipedia.org/wiki/Big_data)
